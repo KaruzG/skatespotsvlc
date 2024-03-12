@@ -1,0 +1,9 @@
+:root {
+    /* MAIN COLORS */
+    --black: #0D0D0D;
+    --white: #FCFCFC;
+    --orange: #DD7D00;
+
+    --black-bg: -black;
+    --black-bg-2: #1A1A1A
+}
