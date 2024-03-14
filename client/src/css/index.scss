@@ -1,5 +1,23 @@
 @use './reset.css';
 @use './vars.css';
 
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
+
+body {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    min-height: 100vh;
+
+    background-color: var(--black-bg-2);
+    color: var(--white);
+
+    font-family: 'Rubik';
+}
+
+.accent {
+    color: var(--orange);
+}
 

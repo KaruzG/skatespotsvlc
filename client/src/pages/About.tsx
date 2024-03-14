@@ -1,7 +1,10 @@
+import Header from "../components/Header"
+import '../css/index.scss'
+
 function About() {
     return (
         <>
-            <h1>Este es el header</h1>
+            <Header />
         </>
     )
 }

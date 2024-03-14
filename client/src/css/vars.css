@@ -4,6 +4,11 @@
     --white: #FCFCFC;
     --orange: #DD7D00;
 
-    --black-bg: -black;
-    --black-bg-2: #1A1A1A
+    --black-bg: var(--black);
+    --black-bg-2: #1A1A1A;
+
+
+    /* FONTS */
+    --fontHeader: 'UrbanRiot';
+    --fontDefault: 'Rubik';
 }

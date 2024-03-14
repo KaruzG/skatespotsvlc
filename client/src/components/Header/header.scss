@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'UrbanRiot';
+    src: url('../../fonts/UrbanRiot.ttf');
+}
+
+Header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+
+    a {
+        text-decoration: none;
+    }
+
+    h1 {
+        color: var(--white);
+        font-family: 'UrbanRiot';
+        letter-spacing: 2px;
+    }
+
+    div {
+        position:   absolute;
+        right: 16px;
+    }
+
+    background-color: var(--black);
+}
+
+#header-dropdown {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 69px; // This will work????
+    background-color: var(--black-bg);
+    padding: 1.5em;
+    list-style: none;
+    gap: 1em;
+
+    border-bottom-left-radius: 20px;
+
+    a {
+        color: var(--white);
+    }
+}
