@@ -11,4 +11,7 @@
     /* FONTS */
     --fontHeader: 'UrbanRiot';
     --fontDefault: 'Rubik';
+
+    /* BORDER RADIUS */
+    --BRBubble: 30px;
 }
