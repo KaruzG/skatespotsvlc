@@ -1,9 +1,22 @@
 import SpotBubble from "../SpotBubble"
+import "./BestSpotsSection.scss"
 
 const BestSpotsSection = () => {
     return (
-        <>
-            <SpotBubble spotName={'MUVIM'} srcImg={'../asd'} />
+        <>  
+            <section className="bestSpotSection">
+                <div className="bestSpotSection-shadow"></div>
+                <SpotBubble spotName='muvim' srcImg='muvim' />
+                <SpotBubble spotName='muvim' srcImg='muvim' />
+                <SpotBubble spotName='muvim' srcImg='muvim' />
+                <SpotBubble spotName='muvim' srcImg='muvim' />
+                <SpotBubble spotName='muvim' srcImg='muvim' />
+                <SpotBubble spotName='muvim' srcImg='muvim' />
+                <SpotBubble spotName='muvim' srcImg='muvim' />
+                <SpotBubble spotName='muvim' srcImg='muvim' />
+                <div className="bestSpotSection-shadow"></div>
+            </section>  
+
         </>
     )
 

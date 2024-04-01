@@ -14,7 +14,9 @@ const SpotBubble = (props:PropsSpotBubble) => {
     <>
       <div className="spotBubble">
         <img onError={addDefaultImg} src={props.srcImg} alt={props.spotName} />
-        <h3>{props.spotName}</h3>
+        <div>
+          <h3>{props.spotName}</h3>
+        </div>
       </div>
     </>
   )

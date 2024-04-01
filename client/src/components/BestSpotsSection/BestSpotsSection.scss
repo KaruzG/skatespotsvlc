@@ -1,0 +1,29 @@
+.bestSpotSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2em 0;
+    overflow: scroll;
+    min-height: max-content;
+    width: 100vw;
+    gap: 1.2em;
+    background-color: var(--black-bg-3);
+    margin-top: 1em;
+    margin-bottom: 1em;
+    overflow-y: hidden;
+    scrollbar-width: none;
+}
+
+.bestSpotSection-shadow {
+    position: absolute;
+    left: 0;
+    background-color: red;
+    height: 215px;
+    width: 100px;
+}
+
+.bestSpotSection div:last-child {
+    right: 0;
+    left: auto;
+}
