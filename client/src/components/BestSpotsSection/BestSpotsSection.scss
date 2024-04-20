@@ -18,12 +18,13 @@
 .bestSpotSection-shadow {
     position: absolute;
     left: 0;
-    background-color: red;
-    height: 215px;
+    background: linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(9,9,121,0) 100%);
+    height: 218px;
     width: 100px;
 }
 
 .bestSpotSection div:last-child {
     right: 0;
     left: auto;
+    background: linear-gradient(-90deg, rgba(0,0,0,0.5) 0%, rgba(9,9,121,0) 100%);
 }
