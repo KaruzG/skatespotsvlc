@@ -3,3 +3,57 @@
     width: 100%;
     height: 70vh;
 }
+
+
+// Markers POPUPS
+.leaflet-popup-content-wrapper {
+    background-color: var(--black-bg-2) !important;
+    padding: 15px 0 !important;
+    width: 300px;
+}
+
+.leaflet-popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+    margin: 0 !important;
+    height: 100%;
+
+    color: var(--white);
+
+    img {
+        height: 150px;
+        width: 100%;
+    }
+
+    p {
+        padding: 0 2em;
+        text-align: center;
+        font-size: medium;
+        margin: 0 !important;
+    }
+
+    button {
+        color: var(--white);
+        padding: 13px;
+        margin-top: auto;
+        font-weight: bold;
+        background-color: var(--orange);
+        border-radius: 10px;
+
+        &:hover {
+            transition: 0.2s;
+            background: var(--orangeDark);
+        }
+    }
+}
+
+.leaflet-popup-tip {
+    background: var(--black-bg-2) !important;
+}
+
+a.leaflet-popup-close-button {
+    color: var(--white);
+}
