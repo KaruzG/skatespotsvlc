@@ -25,6 +25,10 @@ SKATESPOTSVLC is a web application designed for the skateboarding community in V
 - TypeScript for development.
 - SASS for the styles.
 
+Libraries:
+- [leaflet](https://leafletjs.com/) _Thanks openStreetMaps_
+- [react-leaflet](https://react-leaflet.js.org/)
+
 ## Installation 🛠️
 
 1. Clone this repository to your local machine.
@@ -39,3 +43,8 @@ SKATESPOTSVLC is a web application designed for the skateboarding community in V
 ## License 📄
 
 This project is licensed under the [MIT License](LICENSE).
+
+## Images! 💯
+
+![image](https://github.com/KaruzG/skatespotsvlc/assets/95084763/df668b0b-df39-4808-ae6b-7559437f04a2)
+
