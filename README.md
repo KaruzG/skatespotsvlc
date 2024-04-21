@@ -21,7 +21,7 @@ SKATESPOTSVLC is a web application designed for the skateboarding community in V
 ## Technologies Used 💻
 
 - React with Vite for the frontend.
-- Node.js with Next.js for the backend.
+- Node.js with Express for the backend.
 - TypeScript for development.
 - SASS for the styles.
 
