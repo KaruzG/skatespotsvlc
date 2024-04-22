@@ -4,7 +4,7 @@ import bars from '../../svg/3bars.svg'
 function BurgerButton() {
     return (
         <>
-            <button>
+            <button className='burgerButton'>
                 <img src={bars} alt="" />
             </button>
         </>

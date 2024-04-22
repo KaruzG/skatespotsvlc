@@ -1,29 +1,40 @@
 .bestSpotSection {
     display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    max-width: 100vw;
+    gap: 1em;
+    background-color: var(--black-bg-3);
+    margin: 3em 0;
+    padding: 1.2em 0;
+}
+
+.bestSpotSection div.spots {
+    display: flex;
     flex-direction: row;
+    width: 100vw;
     justify-content: space-between;
     align-items: center;
-    padding: 1.2em 0;
     overflow: scroll;
     min-height: max-content;
-    width: 100vw;
     gap: 1.2em;
-    background-color: var(--black-bg-3);
-    margin-top: 1em;
-    margin-bottom: 1em;
     overflow-y: hidden;
     scrollbar-width: none;
 }
 
 .bestSpotSection-shadow {
+    z-index: 99;
+
     position: absolute;
     left: 0;
     background: linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(9,9,121,0) 100%);
-    height: 218px;
+    height: 291px; // How tf I do this correctly
     width: 100px;
 }
 
-.bestSpotSection div:last-child {
+.bestSpotSection-shadow-right{
     right: 0;
     left: auto;
     background: linear-gradient(-90deg, rgba(0,0,0,0.5) 0%, rgba(9,9,121,0) 100%);
