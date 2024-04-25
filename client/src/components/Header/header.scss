@@ -38,6 +38,7 @@ Header {
     padding: 1.5em;
     list-style: none;
     gap: 1em;
+    z-index: 500; // Bcs leaflet map using 400 indexes...
 
     border-bottom-left-radius: 20px;
 
