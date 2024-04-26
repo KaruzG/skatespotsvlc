@@ -17,6 +17,9 @@ const BestSpotsSection = () => {
                     <SpotBubble spotName='muvim' srcImg='muvim' />
                     <SpotBubble spotName='muvim' srcImg='muvim' />
                     <SpotBubble spotName='muvim' srcImg='muvim' />
+                    <SpotBubble spotName='muvim' srcImg='muvim' />
+                    <SpotBubble spotName='muvim' srcImg='muvim' />
+                    <SpotBubble spotName='muvim' srcImg='muvim' />
                 </div>
                 <div className="bestSpotSection-shadow bestSpotSection-shadow-right"></div>
                 <Button innerText="MORE SPOTS" color="white" style="empty" size="l"></Button>

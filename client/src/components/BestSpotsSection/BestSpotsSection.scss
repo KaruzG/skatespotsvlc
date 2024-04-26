@@ -4,20 +4,25 @@
     text-align: center;
     justify-content: center;
     align-items: center;
-    max-width: 100vw;
+    width: 100vw;
     gap: 1em;
     background-color: var(--black-bg-3);
     margin: 3em 0;
     padding: 1.2em 0;
+    overflow-x: hidden;
+
+    h3 {
+        margin-bottom: 1em;
+    }
 }
 
 .bestSpotSection div.spots {
     display: flex;
     flex-direction: row;
-    width: 100vw;
+    width: 100dvw;
     justify-content: space-between;
     align-items: center;
-    overflow: scroll;
+    overflow-x: scroll;
     min-height: max-content;
     gap: 1.2em;
     overflow-y: hidden;
@@ -30,7 +35,7 @@
     position: absolute;
     left: 0;
     background: linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(9,9,121,0) 100%);
-    height: 291px; // How tf I do this correctly
+    height: 329px; // How tf I do this correctly
     width: 100px;
 }
 
