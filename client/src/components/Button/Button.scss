@@ -1,0 +1,73 @@
+Button {
+    padding: 13px;
+    margin-top: auto;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    transition: 0.1s;
+
+    &:hover {
+        cursor: pointer;
+        transition: 0.2s;
+    }
+}
+
+/* ORANGE */
+Button.Button-orange {
+    color: var(--white);
+    background: var(--orange);
+    
+    &:hover {
+        background: var(--orangeDark);
+    }
+}
+
+Button.Button-orange.Button-empty {
+    color: var(--orange);
+    background: transparent;
+    border: 1px solid var(--orange);
+    border-radius: 15px;
+
+    &:hover {
+        background-color: var(--orange);
+        color: var(--white);
+    }
+}
+
+/* WHITE */
+Button.Button-white {
+    color: var(--black);
+    background: var(--white);
+    border: none;
+
+    &:hover {
+        background: var(--whiteDark);
+    }
+}
+
+Button.Button-white.Button-empty {
+    color: var(--white);
+    background: transparent;
+    border: 1px solid var(--white);
+    border-radius: 15px;
+
+    &:hover {
+        background-color: var(--white);
+        color: var(--black);
+    }
+}
+
+/* SIZES */
+
+Button.Button-s {
+    width: 100px;
+}
+
+Button.Button-m {
+    width: 150px;
+}
+
+Button.Button-l {
+    padding: 18px;
+    width: 200px;
+}

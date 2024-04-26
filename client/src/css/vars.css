@@ -6,12 +6,21 @@
 
     --black-bg: var(--black);
     --black-bg-2: #1A1A1A;
+    --black-bg-3: #1f1f1f;
 
     --orangeDark: #a15b00;
+
+    --whiteDark: #dadada;
 
 
 
     /* FONTS */
     --fontHeader: 'UrbanRiot';
     --fontDefault: 'Rubik';
+
+    /* BORDER RADIUS */
+    --BRBubble: 30px;
+
+    /* SHADOWS */
+    --shadowSmall: rgba(0, 0, 0, 0.472) 0px 2px 8px 0px;
 }

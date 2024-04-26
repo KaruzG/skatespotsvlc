@@ -8,9 +8,9 @@ body {
     display: flex;
     flex-direction: column;
 
-    width: 100%;
+    max-width: 100dvw;
     min-height: 100vh;
-
+    overflow-x: hidden;
     background-color: var(--black-bg-2);
     color: var(--white);
 
