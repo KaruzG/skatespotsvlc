@@ -57,3 +57,13 @@
 a.leaflet-popup-close-button {
     color: var(--white);
 }
+
+// Attribution
+.leaflet-container .leaflet-control-attribution {
+    background-color: black !important;
+    border-top-left-radius: 10px;
+
+    a{
+        color: rgb(70, 70, 70);
+    }
+}
