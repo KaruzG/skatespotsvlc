@@ -4,7 +4,6 @@
     text-align: center;
     justify-content: center;
     align-items: center;
-    width: 100vw;
     gap: 1em;
     background-color: var(--black-bg-3);
     margin: 3em 0;
@@ -31,11 +30,10 @@
 
 .bestSpotSection-shadow {
     z-index: 99;
-
     position: absolute;
     left: 0;
     background: linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(9,9,121,0) 100%);
-    height: 329px; // How tf I do this correctly
+    height: 348px; // How tf I do this correctly
     width: 100px;
 }
 
