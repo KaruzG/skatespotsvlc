@@ -8,13 +8,13 @@ interface ButtonTypes {
 }
 
 const Button = ({innerText, color, style, size}: ButtonTypes) => {
-    const colorClass = "Button-" + color
-    const styleClass = "Button-" + style
-    const sizeClass = "Button-" + size
+    const COLOR_CLASS = "Button-" + color
+    const STYLE_CLASS = "Button-" + style
+    const SIZE_CLASS = "Button-" + size
 
     return (
     <>
-      <button className={colorClass + " " + styleClass + " " + sizeClass}>{innerText}</button>
+      <button className={COLOR_CLASS + " " + STYLE_CLASS + " " + SIZE_CLASS}>{innerText}</button>
     </>
   )
 };

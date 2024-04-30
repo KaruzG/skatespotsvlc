@@ -7,6 +7,8 @@ import CUSTOM_ICONS from './Icons'
 
 const POSITION = latLng(39.46748, -0.3772)
 const S3_URL = "https://skatespotsvlc.s3.eu-west-3.amazonaws.com/spots/"
+const ATTRIBUTION = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+const TILELAYER_URL = "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
 
 // Must come from backend
 const MARKERS = [
@@ -29,26 +31,19 @@ const MARKERS = [
 
 const SpotsMap = () => {
   return (
-    <>
     <MapContainer center={POSITION} zoom={13} scrollWheelZoom={false}>
-      <TileLayer 
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>' 
-        url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-      />
-
+      <TileLayer attribution= {ATTRIBUTION} url={TILELAYER_URL}/>
       {MARKERS.map((marker, index) => (
-                <Marker key={index} position={latLng(marker.coords[0], marker.coords[1])} icon={CUSTOM_ICONS[marker.type]}>
-                  <Popup>
-                    <h3>{marker.name}</h3>
-                    <img src={S3_URL + marker.id + "/1"} alt="Spot Image"/>
-                    <p>{marker.desc}</p>
-                    <Button color='orange' size='s' style='fill' innerText='MORE INFO'></Button>
-                  </Popup>
-                </Marker>
+        <Marker key={index} position={latLng(marker.coords[0], marker.coords[1])} icon={CUSTOM_ICONS[marker.type]}>
+          <Popup>
+            <h3>{marker.name}</h3>
+            <img src={S3_URL + marker.id + "/1"} alt="Spot Image"/>
+            <p>{marker.desc}</p>
+            <Button color='orange' size='s' style='fill' innerText='MORE INFO'></Button>
+          </Popup>
+        </Marker>
       ))}
-
     </MapContainer>
-    </>
   )
 };
 

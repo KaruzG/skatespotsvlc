@@ -14,8 +14,6 @@ function Header() {
         } else {
             setIsClicked(true);
             setDropdownDisplay("flex")
-
-            
         }
     }
 
