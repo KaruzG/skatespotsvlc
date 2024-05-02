@@ -10,20 +10,36 @@ const S3_URL = "https://skatespotsvlc.s3.eu-west-3.amazonaws.com/spots/"
 const ATTRIBUTION = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
 const TILELAYER_URL = "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
 
-// Must come from backend
+// Must come from mongodb
 const MARKERS = [
   {
     id: 1,
     coords: [39.46748, -0.3772],
     name: 'MUVIM',
+    desc: 'The most iconic skate plaza in Valencia, always with some skaters arround.',
     type: 0,
-    desc: 'The most iconic skate plaza in Valencia, always with some skaters arround.'
+    stars: 5,
+    police: 2,
+    comments: [
+      {
+        user_id: 0,
+        comment: "The best place! #FreeMuvim"
+      }
+    ]
   },
   {
     id: 2,
     coords: [39.45748, -0.3672],
     name: 'VALENCIA2',
-    type: 1,
+    type: 0,
+    desc: 'Testttttt'
+
+  },
+  {
+    id: 3,
+    coords: [39.46748, -0.3672],
+    name: 'VALENCIA2',
+    type: 0,
     desc: 'Testttttt'
 
   }
