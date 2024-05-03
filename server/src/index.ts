@@ -1,8 +1,12 @@
-import express from "express";
+import express from "express"
+import userRouter from './routes/users'
+import 'dotenv/config'
+
 const app  = express();
+const PORT = 5000
 
-app.get("/", (req, res) => {
-    res.send("First Endpoint")
-})
+app.use(express.json())
 
-app.listen(5000);
+app.use('/api/users', userRouter)
+
+app.listen(PORT);
