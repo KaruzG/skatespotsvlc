@@ -1,0 +1,30 @@
+{
+  "name": "skatespotsvlc",
+  "private": true,
+  "version": "1.0.0",
+  "description": "SkateSpotsVlc",
+  "main": "index.js",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "build": "rimraf server/dist && tsc",
+    "ts.check": "tsc --project tsconfig.json",
+    "add-build": "git add server/dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "pre-commit": [
+    "ts.check",
+    "build",
+    "add-build"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "pre-commit": "^1.2.2",
+    "rimraf": "^5.0.5",
+    "ts-node": "^10.9.2"
+  }
+}
