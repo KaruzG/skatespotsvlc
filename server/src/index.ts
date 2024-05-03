@@ -9,4 +9,8 @@ app.use(express.json())
 
 app.use('/api/users', userRouter)
 
+app.get("/", (req, res) => {
+    res.send("NodeJs Up!")
+})
+
 app.listen(PORT);
