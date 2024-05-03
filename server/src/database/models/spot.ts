@@ -1,7 +1,7 @@
-import mongoose, { Schema } from 'mongoose'
+import mongoose, { Schema, model } from 'mongoose'
 
 const spotSchema = new Schema({
-    id: Number,
+    spotId: Number,
     coords: {alt: Number, lat: Number },
     name: String,
     desc: String,
@@ -10,10 +10,15 @@ const spotSchema = new Schema({
     police: Number,
     comments: [
         {
-        user_id: Number,
+        user_id: {
+            type: Number,
+            ref: 'User'
+        },
         comment: String,
         }
     ]
 })
 
-export default spotSchema
+const Spot = model('Spot', spotSchema)
+
+export default Spot
