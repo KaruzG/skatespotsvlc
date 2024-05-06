@@ -30,6 +30,7 @@ function Header() {
                     <li> <Link to="/">HOME</Link> </li>
                     <li> <Link to="/spots">SPOTS</Link> </li>
                     <li> <Link to="/about">ABOUT</Link> </li>
+                    <li> <Link to="/admin">ADMIN🔒</Link> </li>
                 </ul>
             </header>
         </>

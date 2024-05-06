@@ -4,7 +4,7 @@ interface ButtonTypes {
     innerText: string,
     color: "orange" | "white",
     style: "fill" | "empty"
-    size: "s" | "m" | "l",
+    size?: "s" | "m" | "l" | "fill",
 }
 
 const Button = ({innerText, color, style, size}: ButtonTypes) => {

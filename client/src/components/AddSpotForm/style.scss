@@ -1,0 +1,32 @@
+section {
+    padding: 1em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    gap: 10px;
+
+    div {
+        display: flex;
+        justify-content: space-between;
+        gap: 1em;
+        
+    }
+
+    div.coords {
+        gap: 0.5em;
+        input {
+            width: 100%;
+        }
+    }
+
+    input {
+        color: var(--white);
+        padding: 10px 10px;
+        background: var(--black);
+        border: 1px solid rgb(37, 37, 37);
+        border-radius: 10px;
+    }
+}
