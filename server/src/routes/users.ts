@@ -6,8 +6,6 @@ import User from '../database/models/User'
 const router = express.Router()
 
 router.post('/', async (req, res) => {
-    await mongoose.connect(process.env.MONGO_DB_URL!)
-
     const { body } = req
     const { username, password, type } = body
 
@@ -24,8 +22,8 @@ router.post('/', async (req, res) => {
     mongoose.connection.close()
 })
 
-router.get('/', (req, res) => {
-    res.send("USER!")
+router.get('/', async (req, res) => {
+    res.send("Users Count: " + await User.countDocuments())
 })
 
 export default router
