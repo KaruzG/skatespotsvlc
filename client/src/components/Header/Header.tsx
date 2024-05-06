@@ -28,8 +28,8 @@ function Header() {
                     <li>USERNAME</li>
                     <hr />
                     <li> <Link to="/">HOME</Link> </li>
-                    <li> <Link to="/">SPOTS</Link> </li>
-                    <li> <Link to="/">ABOUT</Link> </li>
+                    <li> <Link to="/spots">SPOTS</Link> </li>
+                    <li> <Link to="/about">ABOUT</Link> </li>
                 </ul>
             </header>
         </>

@@ -7,9 +7,10 @@ import Home from './pages/Home'
 import Spot from './pages/Spot'
 import About from './pages/About'
 import Admin from './pages/Admin'
+import Error404 from './pages/Error404'
 
 const router = createBrowserRouter([
-  { path: "/", element: <Home />},
+  { path: "/", element: <Home />, errorElement: <Error404 />},
   { path: "/spot", element: <Spot />},
   { path: "/About", element: <About />},
   { path: "/Admin", element: <Admin />}

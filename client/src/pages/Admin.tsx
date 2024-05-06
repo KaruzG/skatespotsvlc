@@ -4,7 +4,7 @@ function Admin() {
     return (
         <>
             <Header />
-            <p>asofihsdgf</p>
+            
         </>
     )
 }
