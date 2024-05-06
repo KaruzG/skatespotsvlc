@@ -17,7 +17,6 @@ const express_1 = __importDefault(require("express"));
 const User_1 = __importDefault(require("../database/models/User"));
 const router = express_1.default.Router();
 router.post('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    yield mongoose_1.default.connect(process.env.MONGO_DB_URL);
     const { body } = req;
     const { username, password, type } = body;
     const user = new User_1.default({
@@ -30,8 +29,8 @@ router.post('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     res.json(savedUser);
     mongoose_1.default.connection.close();
 }));
-router.get('/', (req, res) => {
-    res.send("USER!");
-});
+router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    res.send("Users Count: " + (yield User_1.default.countDocuments()));
+}));
 exports.default = router;
 //# sourceMappingURL=users.js.map
