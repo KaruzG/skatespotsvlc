@@ -1,3 +1,4 @@
+
 ![image](https://github.com/KaruzG/skatespotsvlc/assets/95084763/309b4db3-5aaa-4dd0-bc9c-41fb88c5f809)
 
 
@@ -17,6 +18,7 @@ SKATESPOTSVLC is a web application designed for the skateboarding community in V
 - Automatic alerts system for environmental conditions.
 - Integration with skate shops and brands for the promotion of events and competitions.
 - Voting system for spots and alerts.
+- Admin panel for adding spots and users
 
 ## Technologies Used 💻
 
@@ -24,6 +26,9 @@ SKATESPOTSVLC is a web application designed for the skateboarding community in V
 - Node.js with Express for the backend.
 - TypeScript for development.
 - SASS for the styles.
+- MongoDB for the database
+- AWS S3 for the storage
+- Vercel for the hosting
 
 Libraries:
 - [leaflet](https://leafletjs.com/) _Thanks openStreetMaps_
@@ -32,13 +37,9 @@ Libraries:
 ## Installation 🛠️
 
 1. Clone this repository to your local machine.
-2. Navigate to the project directory.
-3. Install dependencies with the command `npm install` (client and server).
-
-## Usage 📝
-
-1. Start the development server with the command `npm run dev`.
-2. Open your browser and visit [http://localhost:3000](http://localhost:3000) to see the application in action.
+2. Install dependencies with the command `npm install`
+3. Configure the .env needed keys
+4. Build & Run
 
 ## License 📄
 
@@ -46,5 +47,9 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Images! 💯
 
-![image](https://github.com/KaruzG/skatespotsvlc/assets/95084763/df668b0b-df39-4808-ae6b-7559437f04a2)
+![image](https://github.com/KaruzG/skatespotsvlc/assets/95084763/54ad792b-1225-4201-b524-e06fa03637b2)
+
+![image](https://github.com/KaruzG/skatespotsvlc/assets/95084763/ca2d392d-07d2-4ec4-a75e-afc7731852b1)
+
+![image](https://github.com/KaruzG/skatespotsvlc/assets/95084763/d8ce571b-06be-44ed-90bb-9b9e2b422a21)
 
