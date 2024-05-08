@@ -16,12 +16,13 @@
 
     img {
         height: 70%;
+        width: 100%;
         border-top-left-radius: var(--BRBubble);
         border-top-right-radius: var(--BRBubble);
     }
     
     div {
-        height: 100%;
+        height: 30%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -31,6 +32,7 @@
         width: 100%;
         text-align: center;
         text-transform: uppercase;
+        margin: 0;
     }
 
 
