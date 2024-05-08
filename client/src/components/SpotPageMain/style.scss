@@ -1,0 +1,27 @@
+main.SpotPageMain {
+    display: flex;
+    flex-direction: row;
+    padding: 2em;
+    align-items: center;
+    justify-content: center;
+    max-width: 1300px;
+    margin: 0 auto 7em auto;
+    gap: 5em;
+
+    div:nth-child(1) {
+        display: flex;
+        flex-direction: column;
+        max-width: 400px;
+        width: 100%;
+        h3 {
+            color: rgba(255, 255, 255, 0.315);
+            margin-bottom: 0.7em;
+        }
+    }
+
+    div:nth-child(2) {
+        img {
+            max-width: 400px;
+        }
+    }
+}
