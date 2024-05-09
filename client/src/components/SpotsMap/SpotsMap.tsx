@@ -30,7 +30,7 @@ const MARKERS = [
   {
     id: 2,
     coords: [39.45748, -0.3672],
-    name: 'VALENCIA2',
+    name: 'PLAZA',
     type: 0,
     desc: 'Testttttt'
 
