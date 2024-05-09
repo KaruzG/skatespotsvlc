@@ -24,7 +24,7 @@ function Admin() {
 
 
     return (
-        <>
+        <div id='admin-wrapper'>
             <Header />
             <main>
                 <nav className={"admin-nav"}>
@@ -34,7 +34,7 @@ function Admin() {
 
                 {shownForm}
             </main>
-        </>
+        </div>
     )
 }
 

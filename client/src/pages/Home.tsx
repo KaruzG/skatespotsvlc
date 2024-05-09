@@ -7,11 +7,11 @@ import '../css/index.scss'
 
 function Home() {
     return (
-        <>
+        <div id='home-wrapper'>
             <Header />
             <SpotsMap />
             <BestSpotsSection />
-        </>
+        </div>
     )
 }
 

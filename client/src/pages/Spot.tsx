@@ -6,12 +6,12 @@ import "../css/index.scss"
 
 function Spot() {
     return (
-        <>
+        <div id='spot-wrapper'>
             <Header />
             <SpotPageMain/>
             <SpotsMap />
             <BestSpotsSection />
-        </>
+        </div>
     )
 }
 
