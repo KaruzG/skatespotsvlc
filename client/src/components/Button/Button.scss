@@ -1,6 +1,5 @@
 Button {
     padding: 13px;
-    margin-top: auto;
     font-weight: bold;
     border-radius: 10px;
     border: none;
@@ -72,7 +71,7 @@ Button.Button-l {
     width: 200px;
 }
 
-Button.Button-fill {
+Button.Button-auto {
     padding: 18px;
     width: 100%;
 }
