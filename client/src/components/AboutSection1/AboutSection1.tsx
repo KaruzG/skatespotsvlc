@@ -1,7 +1,8 @@
 import Button from "../Button";
 import "./AboutSection1.scss"
 import phoneImg from "../../img/aboutPhone.png"
-import TypingAnimation from "react-word-typing-animation";
+import TypingAnimation from "react-word-typing-animation"
+
 
 const AboutSection1 = () => {
   const WORDS = <TypingAnimation 
@@ -15,7 +16,7 @@ const AboutSection1 = () => {
   return (
     <>
       <section id="section1">
-        <div>
+        <div id="phone">
           <img src={phoneImg} alt="Preview of the app in a phone" />
           <div id="blurredCircle"></div>
         </div>

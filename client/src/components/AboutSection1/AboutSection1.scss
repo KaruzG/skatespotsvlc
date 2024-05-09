@@ -5,7 +5,7 @@ section#section1 {
     padding: 0 3em;
     align-items: center;
 
-    div:nth-child(1) {
+    #phone {
         position: relative;
         width: fit-content;
         height: fit-content;
@@ -51,5 +51,25 @@ section#section1 {
             margin-bottom: 1.5em;
         }
 
+    }
+
+    @media (width < 700px) {
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+
+        #phone {
+            img {
+                display: none;
+            }
+        }
+
+        div:nth-child(2) {
+            padding-top: 50px;
+        }
+    }
+
+    @media (width < 1100px) {
+        gap: 30px;
     }
 }
