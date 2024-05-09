@@ -10,6 +10,7 @@ function About() {
             <Header />
             <main>
                 <AboutSection1/>
+                <div id="backgroundCircle"></div>
                 <AboutSection2/>
             </main>
         </>

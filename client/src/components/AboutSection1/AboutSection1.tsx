@@ -4,7 +4,7 @@ import phoneImg from "../../img/aboutPhone.png"
 import TypingAnimation from "react-word-typing-animation";
 
 const AboutSection1 = () => {
-  const words = <TypingAnimation 
+  const WORDS = <TypingAnimation 
     words={['SKATEPARKS', 'SPOTS', 'EVENTS', 'SHOPS']} 
     showComma={false} 
     showCursor={false}
@@ -20,7 +20,7 @@ const AboutSection1 = () => {
           <div id="blurredCircle"></div>
         </div>
         <div>
-          <h1>The BEST way to find {words} in Valencia! 🛹</h1>
+          <h1>The BEST way to find {WORDS} in Valencia! 🛹</h1>
           <p>Find and share your favorite spots and useful info about them.</p>
           <Button color="orange" size="m" style="fill" innerText="Try it now!"/>
         </div>
