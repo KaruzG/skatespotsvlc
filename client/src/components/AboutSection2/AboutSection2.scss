@@ -3,10 +3,28 @@ section#section2 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-bottom: 5em;
+    position: relative;
 
-    #wrapper {
+    h1 {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    Button {
+        position: absolute;
+        bottom: 100px;
+    }
+
+    #about-proyect {
         display: flex;
-        flex-direction: row;
-        gap: 2em;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        bottom: 0;
+        color: rgba(255, 255, 255, 0.267);
+        svg {
+            width: 40px;
+        }
     }
 }
