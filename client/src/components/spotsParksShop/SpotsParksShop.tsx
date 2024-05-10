@@ -1,3 +1,5 @@
+import './styles.scss'
+
 /* imgs */
 import skateshopImg from "../../img/skateshop.jpg"
 import streetSpotImg from "../../img/streetSpot.jpg"
@@ -5,7 +7,7 @@ import skateparkImg from "../../img/skatepark.jpg"
 
 const SpotsParksShop = () => {
     return (
-        <div id="wrapper">
+      <div className="spotsParksShop">
         <div>
           <img src={streetSpotImg} alt="" />
           <h2>STREET</h2>
@@ -13,7 +15,7 @@ const SpotsParksShop = () => {
   
         <div>
           <img src={skateparkImg} alt="" />
-          <h2>PARK</h2>
+          <h2>PARKS</h2>
         </div>
   
         <div>

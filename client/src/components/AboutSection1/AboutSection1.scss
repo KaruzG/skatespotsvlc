@@ -1,5 +1,8 @@
+@use '../../css/_animations.scss' as animations;
+
 section#section1 {
     display: flex;
+    position: relative;
     flex-direction: row;
     gap: 200px;
     padding: 0 3em;
@@ -50,6 +53,19 @@ section#section1 {
             font-size: 1.3em;
             margin-bottom: 1.5em;
         }
+
+    }
+
+    #downArrow {
+        position: absolute;
+        width: 90px;
+        bottom: 30px;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        color: rgba(255, 255, 255, 0.233);
+        @include animations.slideTopBottom(2s);
 
     }
 

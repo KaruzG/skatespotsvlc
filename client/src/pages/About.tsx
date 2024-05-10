@@ -3,6 +3,7 @@ import AboutSection2 from "../components/AboutSection2"
 import Header from "../components/Header"
 import '../css/index.scss'
 import  '../css/about.scss'
+import AboutSection3 from "../components/AboutSection3"
 
 
 
@@ -14,6 +15,7 @@ function About() {
                 <AboutSection1/>
                 <div id="backgroundCircle"></div>
                 <AboutSection2/>
+                <AboutSection3/>
             </main>
         </div>
     )

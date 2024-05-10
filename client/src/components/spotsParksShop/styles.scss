@@ -1,0 +1,63 @@
+div.spotsParksShop {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    
+    div {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        img {
+            object-fit: cover;
+            width: 350px;
+            height: 350px;
+            filter: saturate(0);
+            transition: 0.3s;
+            border-radius: 15px;
+        }
+        
+        h2 {
+            font-size: 4em;
+            text-shadow: 2px 3px 3px black;
+            position: absolute;
+            bottom: 30px;
+        }
+        
+        &:hover * {
+            transition: 0.3s;
+            filter: saturate(1);
+            cursor: pointer;
+        }
+    }
+
+    div:nth-child(2) {
+        margin-top: 70px;
+
+        h2 {
+            bottom: -40px;
+        }
+    }
+
+    @media (width < 930px) {
+        flex-direction: column;
+        gap: 1em;
+
+        div {
+            img {
+                height: 150px;
+                filter: saturate(0.8) brightness(0.6);
+            }
+        }
+
+        div:nth-child(2) {
+            margin: 0;
+
+            h2 {
+                bottom: 30px;
+            }
+        }
+    }
+}

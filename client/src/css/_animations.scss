@@ -1,0 +1,11 @@
+@mixin slideTopBottom($seconds: 3s, $pixels: -30px) {
+    @keyframes slide-top {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY($pixels);
+        }
+      }
+      animation: slide-top $seconds ease-in-out infinite alternate-reverse both;
+}
