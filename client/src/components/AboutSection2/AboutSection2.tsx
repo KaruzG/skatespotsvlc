@@ -11,7 +11,7 @@ const AboutSection2 = () => {
     
     <SpotsParksShops/>
     
-    <Button color="orange" size="l" innerText="MAP" style="fill" />
+    <Button color="orange" size="l" style="fill" link={"/"}>MAP</Button>
     
     <div id="about-proyect">
       <h4>About the proyect</h4>

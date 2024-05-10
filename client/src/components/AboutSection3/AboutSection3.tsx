@@ -2,8 +2,10 @@ import Button from "../Button";
 import "./AboutSection3.scss"
 import { BiLogoGithub } from "react-icons/bi";
 
-
 const AboutSection3 = () => {
+
+  const MY_GITHUB = "https://github.com/KaruzG/skatespotsvlc"
+
   return (
    <section id="section3">
     <div id="wrapper">
@@ -18,7 +20,7 @@ const AboutSection3 = () => {
       </div>
       
       <div id="github">
-        <Button innerText={"Check my GitHub!"} color="white" style="empty" size="l"/>
+        <Button link={MY_GITHUB} color="white" style="empty" size="l" onNewTab={true} >Check my GitHub!</Button>
         <BiLogoGithub />
       </div>
     </div>

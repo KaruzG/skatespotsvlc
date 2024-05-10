@@ -25,7 +25,7 @@ const AboutSection1 = () => {
         <div>
           <h1>The BEST way to find {WORDS} in Valencia! 🛹</h1>
           <p>Find and share your favorite spots and useful info about them.</p>
-          <Button color="orange" size="m" style="fill" innerText="Try it now!"/>
+          <Button color="orange" size="m" style="fill" link={"/"}>Try it now!</Button>
         </div>
         <BiChevronDown id="downArrow"/>
       </section>

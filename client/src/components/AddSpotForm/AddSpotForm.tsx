@@ -19,7 +19,7 @@ const AddSpotForm = () => {
           </div>
           <label htmlFor="">Image of the spot</label>
           <input type="file" name="" placeholder="Spot Name" id="" />
-          <Button color='orange' innerText='Submit' style='fill' size='s'/>
+          <Button color='orange' style='fill' size='s'>Submit</Button>
         </form>
       </section>
     </>
