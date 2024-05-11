@@ -8,15 +8,19 @@ interface ButtonTypes {
     link?,
     children?,
     onNewTab?: boolean,
+    submit?: boolean,
 }
 
-const Button = ({color, style, size, onClick, link, children, onNewTab}: ButtonTypes) => {
+const Button = ({color, style, size, onClick, link, children, onNewTab, submit = false}: ButtonTypes) => {
     const COLOR_CLASS = "Button-" + color
     const STYLE_CLASS = "Button-" + style
     const SIZE_CLASS = "Button-" + size
+    let type: 'button' | 'submit' = 'button'
+
+    if (submit) {type = 'submit'}
 
     let button = 
-    <button onClick={onClick} className={COLOR_CLASS + " " + STYLE_CLASS + " " + SIZE_CLASS}>
+    <button type={type} onClick={onClick} className={COLOR_CLASS + " " + STYLE_CLASS + " " + SIZE_CLASS}>
       {children}
     </button>
 
@@ -26,7 +30,7 @@ const Button = ({color, style, size, onClick, link, children, onNewTab}: ButtonT
           {button}
         </Link>
       </>
-    } else {
+    } else if (link) {
       button = <>
         <Link to={link}>
           {button}

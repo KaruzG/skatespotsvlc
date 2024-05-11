@@ -4,11 +4,13 @@ import userRouter from './routes/users'
 import spotRouter from './routes/spots'
 import 'dotenv/config'
 
+const cors = require('cors')
 const app  = express();
 const PORT = 5000
 
 
 app.use(express.json())
+app.use(cors())
 app.listen(PORT);
 
 mongoose.connect(process.env.MONGO_DB_URL!)
