@@ -27,7 +27,4 @@
     "rimraf": "^5.0.5",
     "ts-node": "^10.9.2"
   },
-  "dependencies": {
-    "react-hook-form": "^7.51.4"
-  }
 }
