@@ -1,4 +1,5 @@
 import BestSpotsSection from '../components/BestSpotsSection'
+import Footer from '../components/Footer'
 import Header from '../components/Header'
 import SpotPageMain from '../components/SpotPageMain'
 import SpotsMap from '../components/SpotsMap'
@@ -11,6 +12,7 @@ function Spot() {
             <SpotPageMain/>
             <SpotsMap />
             <BestSpotsSection />
+            <Footer></Footer>
         </div>
     )
 }
