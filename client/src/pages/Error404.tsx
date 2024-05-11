@@ -1,4 +1,5 @@
 import Button from '../components/Button'
+import Footer from '../components/Footer'
 import Header from '../components/Header'
 import '../css/index.scss'
 
@@ -13,6 +14,7 @@ function Error404() {
             <Button color='orange' style='empty' size='l' link={"/"}>HOME</Button>
             </div>
 
+            <Footer/>
         </div>
     )
 }
