@@ -1,25 +1,70 @@
+import { useForm, SubmitHandler } from 'react-hook-form';
 import Button from '../Button';
 import './style.scss'
 
+interface AddSpotFormData {
+  name: string,
+  desc: string,
+  coords: {alt: number, lat: number },
+  type: number,
+  stars: number,
+  police: number,
+  spotImg: File,
+}
 
 const AddSpotForm = () => {
+
+  const { register, handleSubmit } = useForm<AddSpotFormData>()
+  const onSubmit: SubmitHandler<AddSpotFormData> = (values) => {
+    console.log(values)
+    const URL = 'http://localhost:5000/api/spots'
+    const OPTIONS = {
+      method: 'POST',
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values)
+    }
+
+    fetch(URL, OPTIONS)
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+
+  }
+
   return (
     <>
       <section>
         <h3>New Spot</h3>
 
-        <form action="">
+        <form onSubmit={handleSubmit(onSubmit)}>
           <label htmlFor="">Basic info</label>
-          <input type="text" name="" placeholder="Spot Name" id="" />
-          <textarea name="" id="" placeholder='Description'></textarea>
+          <input type="text" placeholder="Spot Name" {...register("name", {required: true})} />
+          <textarea placeholder='Description' {...register("desc")} />
+
           <label htmlFor="">Coords</label>
           <div className='coords'>
-            <input type="text" name="" placeholder="Altitude" id="" />
-            <input type="text" name="" placeholder="Latitude" id="" />
+            <input type="number" placeholder="Altitude" {...register("coords.alt")} />
+            <input type="number" placeholder="Latitude" {...register("coords.lat")}/>
           </div>
+
+          <label htmlFor="">Rating (1-5)</label>
+          <div>
+            <input type="number" placeholder='Stars' {...register("stars")} />
+            <input type="number" placeholder='Police Risk' {...register("police")} />
+          </div>
+
+          <label htmlFor="">Type of spot</label>
+          <select {...register("type")}>
+            <option value="1">Street spot</option>
+            <option value="2">Skatepark</option>
+            <option value="3">Shop</option>
+          </select>
+
           <label htmlFor="">Image of the spot</label>
-          <input type="file" name="" placeholder="Spot Name" id="" />
-          <Button color='orange' style='fill' size='s'>Submit</Button>
+          <input type="file" placeholder="Spot Name" {...register("spotImg")}/>
+          <Button submit={true} color='orange' style='fill' size='auto'>Submit</Button>
         </form>
       </section>
     </>
