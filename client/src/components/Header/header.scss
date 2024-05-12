@@ -10,6 +10,10 @@ Header {
     justify-content: center;
     padding: 16px;
 
+    hr {
+        margin: 1em 0;
+    }
+
     a {
         text-decoration: none;
     }
@@ -21,7 +25,7 @@ Header {
     }
 
     div {
-        position:   absolute;
+        position: absolute;
         right: 16px;
     }
 
@@ -35,14 +39,52 @@ Header {
     right: 0;
     top: 69px; // This will work????
     background-color: var(--black-bg);
-    padding: 1.5em;
     list-style: none;
-    gap: 1em;
     z-index: 500; // Bcs leaflet map using 400 indexes...
-
+    padding: 1em 0 2em 0;
     border-bottom-left-radius: 20px;
 
     a {
         color: var(--white);
+        padding: 1em 1.5em;
+        transition: 0.2s;
+
+        li {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+
+            svg {
+                width: 25px;
+            }
+        }
+
+        &:hover {
+            transition: 0.2s;
+            padding-left: 2em;
+            cursor: pointer;
+            color: var(--orange);
+            background: rgba(255, 255, 255, 0.021);
+        }
+    }
+
+    li#user {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        padding: 0 1em;
+        img {
+            border-radius: 100%;
+            max-width: 45px;
+        }
+        svg {
+            width: 30px;
+
+            &:hover {
+                transition: 0.2s;
+                cursor: pointer;
+                color: var(--orange);
+            }
+        }
     }
 }

@@ -1,0 +1,57 @@
+div#login-wrapper {
+    main {
+        display: flex;
+        flex-direction: row;
+        gap:1em;
+        justify-content: space-between;
+        align-items: center;
+        height: 500px;
+        margin: 4em 8em;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        background: linear-gradient(228deg, rgb(224, 128, 2) 0%, rgb(44, 28, 8) 100%);
+        border-radius: 20px;
+
+        div#form-img {
+            padding: 50px;
+            
+            img {
+                width: 600px;
+            }
+
+        }
+
+        form {
+            display: flex;
+            padding: 3em 2em;
+            flex-direction: column;
+            height: 100%;
+            background-color: rgb(41, 41, 40);
+            border-radius:0 20px 20px 0;
+            width: 100%;
+
+            h2 { text-align: center;}
+
+            label {margin: 1.5em 0 5px 5px;}
+
+            button {
+                margin: 3em 0;
+            }
+        }
+    }
+
+    @media (width < 1000px) {
+        main {
+            margin: 3em 1.5em;
+
+            div#form-img {
+                display: none;
+            }
+
+            form {
+                border-radius: 20px;
+            }
+        }
+    }
+}
