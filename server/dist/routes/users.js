@@ -15,14 +15,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const express_1 = __importDefault(require("express"));
 const User_1 = __importDefault(require("../database/models/User"));
+const bcrypt = require('bcrypt');
 const router = express_1.default.Router();
 router.post('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { body } = req;
     const { username, password, type } = body;
+    const saltRounds = 10;
+    const passwordHash = yield bcrypt.hash(password, saltRounds);
     const user = new User_1.default({
         type,
         username,
-        password: password,
+        password: passwordHash,
         creation: new Date()
     });
     const savedUser = yield user.save();

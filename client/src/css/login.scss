@@ -1,4 +1,7 @@
 div#login-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     main {
         display: flex;
         flex-direction: row;
@@ -6,12 +9,14 @@ div#login-wrapper {
         justify-content: space-between;
         align-items: center;
         height: 500px;
+        max-width: 830px;
         margin: 4em 8em;
         justify-content: center;
         align-items: center;
         display: flex;
         background: linear-gradient(228deg, rgb(224, 128, 2) 0%, rgb(44, 28, 8) 100%);
         border-radius: 20px;
+        box-shadow: 3px 4px 20px rgba(0, 0, 0, 0.521);
 
         div#form-img {
             padding: 50px;
@@ -41,8 +46,9 @@ div#login-wrapper {
         }
     }
 
-    @media (width < 1000px) {
+    @media (width < 780px) {
         main {
+            max-width: 390px;
             margin: 3em 1.5em;
 
             div#form-img {

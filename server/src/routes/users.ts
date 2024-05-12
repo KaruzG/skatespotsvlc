@@ -1,6 +1,7 @@
 import mongoose from 'mongoose'
 import express from 'express'
 import User from '../database/models/User'
+const bcrypt = require('bcrypt');
 
 
 const router = express.Router()
@@ -9,10 +10,13 @@ router.post('/', async (req, res) => {
     const { body } = req
     const { username, password, type } = body
 
+    const saltRounds = 10
+    const passwordHash = await bcrypt.hash(password, saltRounds)
+
     const user = new User({
         type,
         username,
-        password: password,
+        password: passwordHash,
         creation: new Date()
     })
 
