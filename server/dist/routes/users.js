@@ -15,9 +15,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const express_1 = __importDefault(require("express"));
 const User_1 = __importDefault(require("../database/models/User"));
+const checkUserToken_1 = __importDefault(require("../middlewares/checkUserToken"));
 const bcrypt = require('bcrypt');
 const router = express_1.default.Router();
-router.post('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+router.post('/', checkUserToken_1.default, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { body } = req;
     const { username, password, type } = body;
     const saltRounds = 10;

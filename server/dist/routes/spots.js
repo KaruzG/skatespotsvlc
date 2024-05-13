@@ -47,7 +47,6 @@ router.post('/', checkUserToken_1.default, (req, res) => __awaiter(void 0, void 
     const { body } = req;
     const { coords, name, desc, type, stars, police } = body;
     const spotId = (yield Spot_1.default.countDocuments()) + 1;
-    // Spot to be saved
     const spot = new Spot_1.default({
         spotId,
         coords,
@@ -60,7 +59,7 @@ router.post('/', checkUserToken_1.default, (req, res) => __awaiter(void 0, void 
     const savedSpot = yield spot.save();
     res.json(savedSpot);
 }));
-router.post("/image", upload.single("image"), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+router.post("/image", checkUserToken_1.default, upload.single("image"), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { file } = req;
     const spotId = Number(req.headers["spot-id"]);
     if (!file || !spotId)

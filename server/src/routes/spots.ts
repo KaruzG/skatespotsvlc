@@ -14,7 +14,6 @@ router.post('/', checkUserToken, async (req, res) => { // Tested
     const { coords, name, desc, type, stars, police } = body
     const spotId = await Spot.countDocuments() + 1
 
-    // Spot to be saved
     const spot = new Spot({
         spotId,
         coords,
@@ -30,7 +29,7 @@ router.post('/', checkUserToken, async (req, res) => { // Tested
     res.json(savedSpot)
 })
 
-router.post("/image", upload.single("image"), async (req, res) => { // Not Tested
+router.post("/image", checkUserToken, upload.single("image"), async (req, res) => { // Not Tested
     const { file } = req;
     const spotId = Number(req.headers["spot-id"]) 
     if (!file || !spotId) return res.status(400).json({message: "Bad request"})

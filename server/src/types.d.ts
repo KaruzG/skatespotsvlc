@@ -1,3 +1,5 @@
+import { ObjectId } from "mongoose"
+
 export type SpotType = 'Street' | 'Skatepark' | 'Skateshop'
 
 export interface Spot {
@@ -14,4 +16,10 @@ export interface Spot {
         comment: String,
         }
     ]
+}
+
+export type userTokenInfo = {
+    __id: any,
+    name: string,
+    type: number
 }

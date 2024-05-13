@@ -30,8 +30,9 @@ router.post("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         });
     }
     const userForToken = {
-        id: user._id,
+        __id: user._id,
         name: user.username,
+        type: user.type
     };
     const token = jwt.sign(userForToken, process.env.SECRET);
     res.send({

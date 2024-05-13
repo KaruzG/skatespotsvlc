@@ -1,12 +1,13 @@
 import mongoose from 'mongoose'
 import express from 'express'
 import User from '../database/models/User'
+import checkUserToken from '../middlewares/checkUserToken';
 const bcrypt = require('bcrypt');
 
 
 const router = express.Router()
 
-router.post('/', async (req, res) => {
+router.post('/', checkUserToken,async (req, res) => {
     const { body } = req
     const { username, password, type } = body
 

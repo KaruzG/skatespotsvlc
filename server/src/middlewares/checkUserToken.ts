@@ -17,6 +17,8 @@ const checkUserToken = (req: Request, res: Response, next: NextFunction) => {
     if (!token || decodedToken === undefined || !decodedToken.id) {
         return res.status(401).json({ error: 'token missing or invalid' })
     } else {
+        req.push({userId: decodedToken.id})
+        req.push({type: decodedToken.type})
         next()
     }
 }

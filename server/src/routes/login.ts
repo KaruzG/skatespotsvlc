@@ -1,5 +1,6 @@
 import express, { request } from 'express'
 import User from '../database/models/User'
+import { userTokenInfo } from '../types';
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken');
 
@@ -21,9 +22,10 @@ router.post("/", async (req, res) => {
         })
      }
 
-     const userForToken = {
-        id: user._id,
+     const userForToken: userTokenInfo = {
+        __id: user._id,
         name: user.username,
+        type: user.type
      }
 
      const token = jwt.sign(userForToken, process.env.SECRET)

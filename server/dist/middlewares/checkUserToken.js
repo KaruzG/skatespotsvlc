@@ -16,6 +16,8 @@ const checkUserToken = (req, res, next) => {
         return res.status(401).json({ error: 'token missing or invalid' });
     }
     else {
+        req.push({ userId: decodedToken.id });
+        req.push({ type: decodedToken.type });
         next();
     }
 };
