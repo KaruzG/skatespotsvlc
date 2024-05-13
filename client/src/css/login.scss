@@ -1,3 +1,5 @@
+@use '../css/_animations.scss' as animations;
+
 div#login-wrapper {
     display: flex;
     align-items: center;
@@ -41,8 +43,15 @@ div#login-wrapper {
             label {margin: 1.5em 0 5px 5px;}
 
             button {
-                margin: 3em 0;
+                margin: 3em 0 1em 0;
             }
+
+            #wrongCredentials {
+                color: rgb(211, 11, 11);
+                font-style: italic;
+                @include animations.shake();
+            }
+
         }
     }
 

@@ -3,7 +3,9 @@ import Button from '../components/Button';
 import Header from '../components/Header';
 import '../css/login.scss';
 import phoneImg from '../img/aboutPhone.png'
-import login from '../api/login';
+import login from '../utils/login';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 interface LoginFormData {
     username: string,
@@ -11,19 +13,20 @@ interface LoginFormData {
 }
 
 const Login = () => {
+    const navigate = useNavigate()
     const { register, handleSubmit } = useForm<LoginFormData>()
+    const [alertContainer, setAlertContainer] = useState(<></>)
+    const failLogin = <p id='wrongCredentials'>User doesn't exists or wrong password!</p>
 
     const handleLogin: SubmitHandler<LoginFormData> = async (values) => {
-        try {
-            console.log( await login(values))
-        } catch (error) {
-            console.log('Error loggin in!')
+        setAlertContainer(<></>)
+        if (await login(values)) {
+          navigate("/admin")
+        } else {
+          setAlertContainer(failLogin)
         }
     }
 
-    function loginad() {
-      localStorage.setItem("token", "tasdasdasd")
-    }
 
   return (
     <>
@@ -39,7 +42,8 @@ const Login = () => {
             <input type="text" {...register("username")}/>
             <label> Password</label>
             <input type="password" {...register("password")}/>
-            <Button onClick={loginad} submit={true} color='orange' style='fill'>Login</Button>
+            <Button submit={true} color='orange' style='fill'>Login</Button>
+            {alertContainer}
         </form>
       </main>
     </div>
