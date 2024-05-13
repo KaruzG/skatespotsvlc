@@ -39,13 +39,15 @@ const express_1 = __importDefault(require("express"));
 const Spot_1 = __importDefault(require("../database/models/Spot"));
 const multer_1 = __importStar(require("multer"));
 const s3_1 = require("../services/s3");
+const checkUserToken_1 = __importDefault(require("../middlewares/checkUserToken"));
 const router = express_1.default.Router();
 const storage = (0, multer_1.memoryStorage)();
 const upload = (0, multer_1.default)({ storage });
-router.post('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+router.post('/', checkUserToken_1.default, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { body } = req;
     const { coords, name, desc, type, stars, police } = body;
     const spotId = (yield Spot_1.default.countDocuments()) + 1;
+    // Spot to be saved
     const spot = new Spot_1.default({
         spotId,
         coords,

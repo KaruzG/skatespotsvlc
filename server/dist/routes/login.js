@@ -25,10 +25,9 @@ router.post("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         ? false
         : yield bcrypt.compare(password, user.password);
     if (!(user && passwordCorrect)) {
-        res.status(401).json({
+        return res.status(401).json({
             error: 'invalid user or password'
         });
-        return false;
     }
     const userForToken = {
         id: user._id,

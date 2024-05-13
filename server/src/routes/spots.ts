@@ -1,20 +1,20 @@
 import express from 'express'
 import Spot from '../database/models/Spot'
 import multer, {memoryStorage} from "multer"
-import { uploadToS3  } from '../services/s3'
-
+import { uploadToS3 } from '../services/s3'
+import checkUserToken from '../middlewares/checkUserToken'
 
 const router = express.Router()
 
 const storage = memoryStorage()
 const upload = multer({storage})
 
-router.post('/', async (req, res) => { // Tested
+router.post('/', checkUserToken, async (req, res) => { // Tested
     const { body } = req
     const { coords, name, desc, type, stars, police } = body
-
     const spotId = await Spot.countDocuments() + 1
 
+    // Spot to be saved
     const spot = new Spot({
         spotId,
         coords,
