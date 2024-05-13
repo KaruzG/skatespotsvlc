@@ -17,6 +17,14 @@ body {
     font-family: 'Rubik';
 }
 
+input, textarea, select {
+    color: var(--white);
+    padding: 10px 10px;
+    background: var(--black);
+    border: 1px solid rgb(37, 37, 37);
+    border-radius: 10px;
+}
+
 .accent {
     color: var(--orange);
 }

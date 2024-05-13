@@ -13,6 +13,8 @@ const User = model('User', userSchema)
 userSchema.set('toJSON', {
     transform: (document, returnedObject) => {
         delete returnedObject.password
+        delete returnedObject.__v
+        delete returnedObject.__id
     }
 })
 

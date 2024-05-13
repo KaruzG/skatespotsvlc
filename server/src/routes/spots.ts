@@ -1,18 +1,17 @@
 import express from 'express'
 import Spot from '../database/models/Spot'
 import multer, {memoryStorage} from "multer"
-import { uploadToS3  } from '../services/s3'
-
+import { uploadToS3 } from '../services/s3'
+import checkUserToken from '../middlewares/checkUserToken'
 
 const router = express.Router()
 
 const storage = memoryStorage()
 const upload = multer({storage})
 
-router.post('/', async (req, res) => { // Tested
+router.post('/', checkUserToken, async (req, res) => { // Tested
     const { body } = req
     const { coords, name, desc, type, stars, police } = body
-
     const spotId = await Spot.countDocuments() + 1
 
     const spot = new Spot({
@@ -30,7 +29,7 @@ router.post('/', async (req, res) => { // Tested
     res.json(savedSpot)
 })
 
-router.post("/image", upload.single("image"), async (req, res) => { // Not Tested
+router.post("/image", checkUserToken, upload.single("image"), async (req, res) => { // Not Tested
     const { file } = req;
     const spotId = Number(req.headers["spot-id"]) 
     if (!file || !spotId) return res.status(400).json({message: "Bad request"})

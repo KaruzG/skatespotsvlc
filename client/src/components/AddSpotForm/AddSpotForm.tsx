@@ -35,7 +35,7 @@ const AddSpotForm = () => {
 
   return (
     <>
-      <section>
+      <section id='add-spot-form'>
         <h3>New Spot</h3>
 
         <form onSubmit={handleSubmit(onSubmit)}>

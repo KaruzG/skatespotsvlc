@@ -3,7 +3,7 @@ import './style.scss'
 const AddUserForm = () => {
   return (
     <>
-      <section>
+      <section id='add-user-form'>
         <h3>New User</h3>
         <form action="">
           <label htmlFor="asd">Username:</label>

@@ -1,0 +1,72 @@
+@use '../css/_animations.scss' as animations;
+
+div#login-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    main {
+        display: flex;
+        flex-direction: row;
+        gap:1em;
+        justify-content: space-between;
+        align-items: center;
+        height: 500px;
+        max-width: 830px;
+        margin: 4em 8em;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        background: linear-gradient(228deg, rgb(224, 128, 2) 0%, rgb(44, 28, 8) 100%);
+        border-radius: 20px;
+        box-shadow: 3px 4px 20px rgba(0, 0, 0, 0.521);
+
+        div#form-img {
+            padding: 50px;
+            
+            img {
+                width: 600px;
+            }
+
+        }
+
+        form {
+            display: flex;
+            padding: 3em 2em;
+            flex-direction: column;
+            height: 100%;
+            background-color: rgb(41, 41, 40);
+            border-radius:0 20px 20px 0;
+            width: 100%;
+
+            h2 { text-align: center;}
+
+            label {margin: 1.5em 0 5px 5px;}
+
+            button {
+                margin: 3em 0 1em 0;
+            }
+
+            #wrongCredentials {
+                color: rgb(211, 11, 11);
+                font-style: italic;
+                @include animations.shake();
+            }
+
+        }
+    }
+
+    @media (width < 780px) {
+        main {
+            max-width: 390px;
+            margin: 3em 1.5em;
+
+            div#form-img {
+                display: none;
+            }
+
+            form {
+                border-radius: 20px;
+            }
+        }
+    }
+}

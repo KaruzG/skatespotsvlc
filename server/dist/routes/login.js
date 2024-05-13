@@ -12,29 +12,34 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const mongoose_1 = __importDefault(require("mongoose"));
 const express_1 = __importDefault(require("express"));
 const User_1 = __importDefault(require("../database/models/User"));
-const checkUserToken_1 = __importDefault(require("../middlewares/checkUserToken"));
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 const router = express_1.default.Router();
-router.post('/', checkUserToken_1.default, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+router.post("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { body } = req;
-    const { username, password, type } = body;
-    const saltRounds = 10;
-    const passwordHash = yield bcrypt.hash(password, saltRounds);
-    const user = new User_1.default({
-        type,
-        username,
-        password: passwordHash,
-        creation: new Date()
+    const { username, password } = body;
+    const user = yield User_1.default.findOne({ username });
+    const passwordCorrect = user === null
+        ? false
+        : yield bcrypt.compare(password, user.password);
+    if (!(user && passwordCorrect)) {
+        return res.status(401).json({
+            error: 'invalid user or password'
+        });
+    }
+    const userForToken = {
+        __id: user._id,
+        name: user.username,
+        type: user.type
+    };
+    const token = jwt.sign(userForToken, process.env.SECRET);
+    res.send({
+        name: user.username,
+        type: user.type,
+        token: token
     });
-    const savedUser = yield user.save();
-    res.json(savedUser);
-    mongoose_1.default.connection.close();
-}));
-router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    res.send("Users Count: " + (yield User_1.default.countDocuments()));
 }));
 exports.default = router;
-//# sourceMappingURL=users.js.map
+//# sourceMappingURL=login.js.map

@@ -16,6 +16,7 @@ const express_1 = __importDefault(require("express"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const users_1 = __importDefault(require("./routes/users"));
 const spots_1 = __importDefault(require("./routes/spots"));
+const login_1 = __importDefault(require("./routes/login"));
 require("dotenv/config");
 const cors = require('cors');
 const app = (0, express_1.default)();
@@ -27,6 +28,7 @@ mongoose_1.default.connect(process.env.MONGO_DB_URL);
 // Routes
 app.use('/api/users', users_1.default);
 app.use('/api/spots', spots_1.default);
+app.use('/api/login', login_1.default);
 app.get("/", (req, res) => {
     res.send("NodeJs Up!");
 });

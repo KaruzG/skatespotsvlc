@@ -55,7 +55,7 @@ const SpotsMap = () => {
             <h3>{marker.name}</h3>
             <img src={S3_URL + marker.id + "/1"} alt="Spot Image"/>
             <p>{marker.desc}</p>
-            <Button color='orange' size='s' style='fill'>MORE INFO</Button>
+            <Button color='orange' size='l' style='fill'>MORE INFO</Button>
           </Popup>
         </Marker>
       ))}

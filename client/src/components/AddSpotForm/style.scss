@@ -1,36 +1,28 @@
-section {
+section#add-spot-form {
     padding: 1em;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    padding: 1em;
-    gap: 10px;
-
-    label {
-        margin-top: 10px;
-    }
-
-    div {
+    
+    form {
         display: flex;
-        justify-content: space-between;
-        gap: 0.5em;
-        input {
-            width: 100%;
-        }   
-    }
-
-    input, textarea, select {
-        color: var(--white);
-        padding: 10px 10px;
-        background: var(--black);
-        border: 1px solid rgb(37, 37, 37);
-        border-radius: 10px;
-    }
-
-    textarea {
-        resize:vertical;
-        max-height: 300px;
+        flex-direction: column;
+        padding: 1em;
+        gap: 10px;
+    
+        label {
+            margin-top: 10px;
+        }
+    
+        div {
+            display: flex;
+            justify-content: space-between;
+            gap: 0.5em;
+            input {
+                width: 100%;
+            }   
+        }
+    
+        textarea {
+            resize:vertical;
+            max-height: 300px;
+        }
     }
 }

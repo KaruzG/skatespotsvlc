@@ -9,3 +9,15 @@
       }
       animation: slide-top $seconds ease-in-out infinite alternate-reverse both;
 }
+
+@mixin shake() {
+  @keyframes shaking {
+    0% { transform: translateX(0) }
+    25% { transform: translateX(5px) }
+    50% { transform: translateX(-5px) }
+    75% { transform: translateX(5px) }
+    100% { transform: translateX(0) }
+   }
+
+    animation: shaking 0.25s 1;
+}
