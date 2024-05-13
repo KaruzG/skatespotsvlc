@@ -2,6 +2,7 @@ import express from "express"
 import mongoose from "mongoose"
 import userRouter from './routes/users'
 import spotRouter from './routes/spots'
+import loginRouter from './routes/login'
 import 'dotenv/config'
 
 const cors = require('cors')
@@ -18,6 +19,7 @@ mongoose.connect(process.env.MONGO_DB_URL!)
 // Routes
 app.use('/api/users', userRouter)
 app.use('/api/spots', spotRouter)
+app.use('/api/login', loginRouter)
 
 app.get("/", (req, res) => {
     res.send("NodeJs Up!")
