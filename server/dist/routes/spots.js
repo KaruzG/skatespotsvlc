@@ -59,15 +59,17 @@ router.post('/', checkUserToken_1.default, (req, res) => __awaiter(void 0, void 
     const savedSpot = yield spot.save();
     res.json(savedSpot);
 }));
-router.post("/image", checkUserToken_1.default, upload.single("image"), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+router.post("/image", checkUserToken_1.default, upload.single("file"), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { file } = req;
-    const spotId = Number(req.headers["spot-id"]);
+    let spotId = req.body.spotId;
+    console.log(file);
+    console.log(spotId);
     if (!file || !spotId)
         return res.status(400).json({ message: "Bad request" });
     const { error, key } = (0, s3_1.uploadToS3)(file, spotId);
     if ({ error })
-        return res.status(500).json({ message: error.message });
-    return res.status(201).json({ key });
+        res.status(500).json({ message: error.message });
+    res.status(201).json({ key });
 }));
 exports.default = router;
 //# sourceMappingURL=spots.js.map

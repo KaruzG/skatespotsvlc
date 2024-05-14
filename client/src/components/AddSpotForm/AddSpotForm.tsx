@@ -1,6 +1,7 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
 import Button from '../Button';
 import './style.scss'
+import uploadSpotImg from '../../utils/uploadSpotImg';
 
 interface AddSpotFormData {
   name: string,
@@ -9,7 +10,9 @@ interface AddSpotFormData {
   type: number,
   stars: number,
   police: number,
-  spotImg: File,
+  file: File,
+  token: string | null
+  spotId: number,
 }
 
 const AddSpotForm = () => {
@@ -17,19 +20,25 @@ const AddSpotForm = () => {
   const { register, handleSubmit } = useForm<AddSpotFormData>()
   const onSubmit: SubmitHandler<AddSpotFormData> = (values) => {
     console.log(values)
-    const URL = 'http://localhost:5000/api/spots'
+    const URL = import.meta.env.VITE_API_URL + "api/spots/"
     const OPTIONS = {
       method: 'POST',
       headers: {
         Accept: "application/json",
-        "Content-Type": "application/json",
+        'Content-Type': "application/json",
+        Authorization: "Bearer " + localStorage.getItem("token"),
       },
       body: JSON.stringify(values)
     }
 
     fetch(URL, OPTIONS)
       .then((response) => response.json())
-      .then((data) => console.log(data))
+      .then((data) => {
+        console.log(data)
+        console.log("Uploading IMG")
+
+        console.log(uploadSpotImg(data.spotId, values.file))
+      })
 
   }
 
@@ -63,7 +72,7 @@ const AddSpotForm = () => {
           </select>
 
           <label htmlFor="">Image of the spot</label>
-          <input type="file" placeholder="Spot Name" {...register("spotImg")}/>
+          <input type="file" placeholder="Spot Name" {...register("file")}/>
           <Button submit={true} color='orange' style='fill' size='auto'>Submit</Button>
         </form>
       </section>

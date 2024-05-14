@@ -29,16 +29,18 @@ router.post('/', checkUserToken, async (req, res) => { // Tested
     res.json(savedSpot)
 })
 
-router.post("/image", checkUserToken, upload.single("image"), async (req, res) => { // Not Tested
-    const { file } = req;
-    const spotId = Number(req.headers["spot-id"]) 
+router.post("/image", checkUserToken, upload.single("file"), async (req, res) => { // Not Tested
+    const { file } = req
+    let spotId = req.body.spotId
+    console.log(file)
+    console.log(spotId)
     if (!file || !spotId) return res.status(400).json({message: "Bad request"})
 
     const {error, key}:any = uploadToS3(file, spotId)
 
-    if ({error}) return res.status(500).json({message: error.message})
+    if ({error}) res.status(500).json({message: error.message})
 
-    return res.status(201).json({key})
+    res.status(201).json({key})
 })
 
 export default router
