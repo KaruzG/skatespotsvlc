@@ -1,5 +1,5 @@
 import express from 'express'
-import Spot from '../database/models/Spot'
+import Spot from '../database/models/spot'
 import multer, {memoryStorage} from "multer"
 import { uploadToS3 } from '../services/s3'
 import checkUserToken from '../middlewares/checkUserToken'
