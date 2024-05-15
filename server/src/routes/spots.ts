@@ -5,11 +5,10 @@ import { uploadToS3 } from '../services/s3'
 import checkUserToken from '../middlewares/checkUserToken'
 
 const router = express.Router()
-
 const storage = memoryStorage()
 const upload = multer({storage})
 
-router.post('/', checkUserToken, async (req, res) => { // Tested
+router.post('/spot', checkUserToken, async (req, res) => { // Tested
     const { body } = req
     const { coords, name, desc, type, stars, police } = body
     const spotId = await Spot.countDocuments() + 1
@@ -29,18 +28,17 @@ router.post('/', checkUserToken, async (req, res) => { // Tested
     res.json(savedSpot)
 })
 
-router.post("/image", checkUserToken, upload.single("file"), async (req, res) => { // Not Tested
-    const { file } = req
-    let spotId = req.body.spotId
-    console.log(file)
-    console.log(spotId)
+router.post("/image",  upload.single("file"), checkUserToken, async (req, res) => { // Not Tested
+    const { body, file } = req
+    const { spotId } = body
+
     if (!file || !spotId) return res.status(400).json({message: "Bad request"})
+    
+    const { error, key }:any = await uploadToS3({file, spotId})
 
-    const {error, key}:any = uploadToS3(file, spotId)
+    if (error) return res.status(500).json({message: error.message})
 
-    if ({error}) res.status(500).json({message: error.message})
-
-    res.status(201).json({key})
+    return res.status(201).json( {key} )
 })
 
 export default router

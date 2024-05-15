@@ -10,7 +10,7 @@ interface AddSpotFormData {
   type: number,
   stars: number,
   police: number,
-  file: File,
+  files: File,
   token: string | null
   spotId: number,
 }
@@ -20,7 +20,7 @@ const AddSpotForm = () => {
   const { register, handleSubmit } = useForm<AddSpotFormData>()
   const onSubmit: SubmitHandler<AddSpotFormData> = (values) => {
     console.log(values)
-    const URL = import.meta.env.VITE_API_URL + "api/spots/"
+    const URL = import.meta.env.VITE_API_URL + "api/spots/spot"
     const OPTIONS = {
       method: 'POST',
       headers: {
@@ -36,8 +36,9 @@ const AddSpotForm = () => {
       .then((data) => {
         console.log(data)
         console.log("Uploading IMG")
+        console.log(values.files[0])
 
-        console.log(uploadSpotImg(data.spotId, values.file))
+        console.log(uploadSpotImg(data.spotId, values.files[0]))
       })
 
   }
@@ -72,7 +73,7 @@ const AddSpotForm = () => {
           </select>
 
           <label htmlFor="">Image of the spot</label>
-          <input type="file" placeholder="Spot Name" {...register("file")}/>
+          <input type="file" placeholder="Spot Name" {...register("files")}/>
           <Button submit={true} color='orange' style='fill' size='auto'>Submit</Button>
         </form>
       </section>

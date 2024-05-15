@@ -17,9 +17,8 @@ const uuid_1 = require("uuid");
 require("dotenv/config");
 const s3 = new client_s3_1.S3Client({ region: process.env.AWS_REGION });
 const BUCKET = process.env.S3_BUCKET;
-console.log(BUCKET);
-const uploadToS3 = (file, spotId) => __awaiter(void 0, void 0, void 0, function* () {
-    const key = `${spotId}/${(0, uuid_1.v4)()}`;
+const uploadToS3 = (_a) => __awaiter(void 0, [_a], void 0, function* ({ file, spotId }) {
+    const key = `spots/${spotId}/${(0, uuid_1.v4)()}`;
     console.log(key);
     const command = new client_s3_1.PutObjectCommand({
         Bucket: BUCKET,
@@ -27,7 +26,6 @@ const uploadToS3 = (file, spotId) => __awaiter(void 0, void 0, void 0, function*
         Body: file.buffer,
         ContentType: file.mimetype,
     });
-    console.log(command);
     try {
         yield s3.send(command);
         return { key };

@@ -43,7 +43,7 @@ const checkUserToken_1 = __importDefault(require("../middlewares/checkUserToken"
 const router = express_1.default.Router();
 const storage = (0, multer_1.memoryStorage)();
 const upload = (0, multer_1.default)({ storage });
-router.post('/', checkUserToken_1.default, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+router.post('/spot', checkUserToken_1.default, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { body } = req;
     const { coords, name, desc, type, stars, police } = body;
     const spotId = (yield Spot_1.default.countDocuments()) + 1;
@@ -59,17 +59,15 @@ router.post('/', checkUserToken_1.default, (req, res) => __awaiter(void 0, void 
     const savedSpot = yield spot.save();
     res.json(savedSpot);
 }));
-router.post("/image", checkUserToken_1.default, upload.single("file"), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { file } = req;
-    let spotId = req.body.spotId;
-    console.log(file);
-    console.log(spotId);
+router.post("/image", upload.single("file"), checkUserToken_1.default, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { body, file } = req;
+    const { spotId } = body;
     if (!file || !spotId)
         return res.status(400).json({ message: "Bad request" });
-    const { error, key } = (0, s3_1.uploadToS3)(file, spotId);
-    if ({ error })
-        res.status(500).json({ message: error.message });
-    res.status(201).json({ key });
+    const { error, key } = yield (0, s3_1.uploadToS3)({ file, spotId });
+    if (error)
+        return res.status(500).json({ message: error.message });
+    return res.status(201).json({ key });
 }));
 exports.default = router;
 //# sourceMappingURL=spots.js.map
