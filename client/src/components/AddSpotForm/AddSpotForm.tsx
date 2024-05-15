@@ -50,18 +50,18 @@ const AddSpotForm = () => {
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <label htmlFor="">Basic info</label>
-          <input type="text" placeholder="Spot Name" {...register("name", {required: true})} />
-          <textarea placeholder='Description' {...register("desc")} />
+          <input required type="text" placeholder="Spot Name" {...register("name", {required: true})} />
+          <textarea required placeholder='Description' {...register("desc")} />
 
           <label htmlFor="">Coords</label>
           <div className='coords'>
-            <input type="number" placeholder="Altitude" {...register("coords.alt")} />
-            <input type="number" placeholder="Latitude" {...register("coords.lat")}/>
+            <input type="number" step={0.000001} required placeholder="Altitude" {...register("coords.alt")} />
+            <input type="number" step={0.000001} required placeholder="Latitude" {...register("coords.lat")}/>
           </div>
 
           <label htmlFor="">Rating (1-5)</label>
           <div>
-            <input type="number" placeholder='Stars' {...register("stars")} />
+            <input type="number" step={0.5} placeholder='Stars' {...register("stars")} />
             <input type="number" placeholder='Police Risk' {...register("police")} />
           </div>
 
@@ -73,7 +73,7 @@ const AddSpotForm = () => {
           </select>
 
           <label htmlFor="">Image of the spot</label>
-          <input type="file" multiple placeholder="Spot Name" {...register("files")}/>
+          <input required type="file" multiple placeholder="Spot Name" {...register("files")}/>
           <Button submit={true} color='orange' style='fill' size='auto'>Submit</Button>
         </form>
       </section>
