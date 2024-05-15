@@ -21,8 +21,9 @@ require("dotenv/config");
 const cors = require('cors');
 const app = (0, express_1.default)();
 const PORT = 5000;
+console.log("NodeJs running on port " + PORT);
 app.use(express_1.default.json());
-app.use(cors());
+app.use(cors({ origin: "*" }));
 app.listen(PORT);
 mongoose_1.default.connect(process.env.MONGO_DB_URL);
 // Routes

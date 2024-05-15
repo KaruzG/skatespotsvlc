@@ -9,9 +9,10 @@ const cors = require('cors')
 const app  = express();
 const PORT = 5000
 
+console.log("NodeJs running on port " + PORT)
 
 app.use(express.json())
-app.use(cors())
+app.use(cors({origin: "*"}))
 app.listen(PORT);
 
 mongoose.connect(process.env.MONGO_DB_URL!)

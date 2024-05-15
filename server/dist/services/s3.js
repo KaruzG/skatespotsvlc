@@ -14,10 +14,11 @@ exports.uploadToS3 = void 0;
 /* Not tested in vercel*/
 const client_s3_1 = require("@aws-sdk/client-s3");
 const uuid_1 = require("uuid");
-const s3 = new client_s3_1.S3Client();
+require("dotenv/config");
+const s3 = new client_s3_1.S3Client({ region: process.env.AWS_REGION });
 const BUCKET = process.env.S3_BUCKET;
-const uploadToS3 = (file, spotId) => __awaiter(void 0, void 0, void 0, function* () {
-    const key = `${spotId}/${(0, uuid_1.v4)()}`;
+const uploadToS3 = (_a) => __awaiter(void 0, [_a], void 0, function* ({ file, spotId }) {
+    const key = `spots/${spotId}/${(0, uuid_1.v4)()}`;
     const command = new client_s3_1.PutObjectCommand({
         Bucket: BUCKET,
         Key: key,
@@ -29,6 +30,7 @@ const uploadToS3 = (file, spotId) => __awaiter(void 0, void 0, void 0, function*
         return { key };
     }
     catch (error) {
+        console.log("fuck");
         console.log(error);
         return { error };
     }
