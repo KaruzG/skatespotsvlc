@@ -19,7 +19,6 @@ const s3 = new client_s3_1.S3Client({ region: process.env.AWS_REGION });
 const BUCKET = process.env.S3_BUCKET;
 const uploadToS3 = (_a) => __awaiter(void 0, [_a], void 0, function* ({ file, spotId }) {
     const key = `spots/${spotId}/${(0, uuid_1.v4)()}`;
-    console.log(key);
     const command = new client_s3_1.PutObjectCommand({
         Bucket: BUCKET,
         Key: key,

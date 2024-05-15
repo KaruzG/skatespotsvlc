@@ -9,6 +9,7 @@ const spotSchema = new mongoose_1.Schema({
     type: Number,
     stars: Number,
     police: Number,
+    images: [],
     comments: [
         {
             user_id: {

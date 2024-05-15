@@ -30,14 +30,18 @@ router.post('/spot', checkUserToken, async (req, res) => { // Tested
 
 router.post("/image",  upload.single("file"), checkUserToken, async (req, res) => { // Not Tested
     const { body, file } = req
-    const { spotId } = body
+    const { spotId, _id } = body
 
-    if (!file || !spotId) return res.status(400).json({message: "Bad request"})
+    if (!file || !spotId || !_id) return res.status(400).json({message: "Bad request"})
     
     const { error, key }:any = await uploadToS3({file, spotId})
 
     if (error) return res.status(500).json({message: error.message})
 
+    const SPOT = await Spot.findById(_id)
+    SPOT.images.push(key)
+
+    await Spot.findOneAndUpdate({_id: _id}, {images: SPOT.images}, {new: true})
     return res.status(201).json( {key} )
 })
 

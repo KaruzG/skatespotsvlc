@@ -8,6 +8,9 @@ const spotSchema = new Schema({
     type: Number,
     stars: Number,
     police: Number,
+    images: [
+
+    ],
     comments: [
         {
         user_id: {

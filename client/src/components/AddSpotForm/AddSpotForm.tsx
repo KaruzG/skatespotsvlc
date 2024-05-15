@@ -18,7 +18,8 @@ interface AddSpotFormData {
 const AddSpotForm = () => {
 
   const { register, handleSubmit } = useForm<AddSpotFormData>()
-  const onSubmit: SubmitHandler<AddSpotFormData> = (values) => {
+  const onSubmit: SubmitHandler<AddSpotFormData> = async (values) => {
+    console.log("SE ENVíA")
     console.log(values)
     const URL = import.meta.env.VITE_API_URL + "api/spots/spot"
     const OPTIONS = {
@@ -33,12 +34,10 @@ const AddSpotForm = () => {
 
     fetch(URL, OPTIONS)
       .then((response) => response.json())
-      .then((data) => {
+      .then(async (data) => {
+        console.log("SE RECIBE")
         console.log(data)
-        console.log("Uploading IMG")
-        console.log(values.files[0])
-
-        console.log(uploadSpotImg(data.spotId, values.files[0]))
+        await uploadSpotImg(data.spotId, data._id, values.files[0])
       })
 
   }

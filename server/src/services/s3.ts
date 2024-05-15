@@ -11,7 +11,6 @@ type uploadData = {file: Express.Multer.File, spotId: Number}
 
 export const uploadToS3 = async ({file, spotId}:uploadData) => {
     const key = `spots/${spotId}/${uuid()}`
-    console.log(key)
     const command = new PutObjectCommand({
         Bucket: BUCKET, 
         Key: key, 
