@@ -20,7 +20,7 @@ const AddSpotForm = () => {
   const { register, handleSubmit, reset } = useForm<AddSpotFormData>()
   
   const onSubmit: SubmitHandler<AddSpotFormData> = async (values) => {
-    const URL = import.meta.env.VITE_API_URL + "api/spots/spot"
+    const URL = import.meta.env.VITE_API_URL + "api/spots/"
     const OPTIONS = {
       method: 'POST',
       headers: {

@@ -43,7 +43,20 @@ const checkUserToken_1 = __importDefault(require("../middlewares/checkUserToken"
 const router = express_1.default.Router();
 const storage = (0, multer_1.memoryStorage)();
 const upload = (0, multer_1.default)({ storage });
-router.post('/spot', checkUserToken_1.default, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+router.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { body } = req;
+    const { spotId } = body;
+    let params = {};
+    if (spotId) {
+        params = { spotId: spotId };
+    }
+    const ALL_SPOTS = yield Spot_1.default.find(params);
+    if (!ALL_SPOTS) {
+        return res.status(204);
+    }
+    return res.status(200).json(ALL_SPOTS);
+}));
+router.post('/', checkUserToken_1.default, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { body } = req;
     const { coords, name, desc, type, stars, police } = body;
     const spotId = (yield Spot_1.default.countDocuments()) + 1;

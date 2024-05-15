@@ -8,7 +8,19 @@ const router = express.Router()
 const storage = memoryStorage()
 const upload = multer({storage})
 
-router.post('/spot', checkUserToken, async (req, res) => { // Tested
+router.get("/", async (req, res) => {
+    const { body } = req
+    const { spotId } = body
+    let params = {}
+
+    if(spotId) { params = {spotId: spotId} }
+
+    const ALL_SPOTS = await Spot.find(params)
+    if (!ALL_SPOTS) {return res.status(204)}
+    return res.status(200).json(ALL_SPOTS)
+})
+
+router.post('/', checkUserToken, async (req, res) => { // Tested
     const { body } = req
     const { coords, name, desc, type, stars, police } = body
     const spotId = await Spot.countDocuments() + 1
