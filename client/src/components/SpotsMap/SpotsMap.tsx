@@ -4,58 +4,55 @@ import { latLng } from 'leaflet';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import Button from '../Button'
 import CUSTOM_ICONS from './Icons'
+import { useEffect, useState } from 'react';
 
 const POSITION = latLng(39.46748, -0.3772)
-const S3_URL = "https://skatespotsvlc.s3.eu-west-3.amazonaws.com/spots/"
 const ATTRIBUTION = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
 const TILELAYER_URL = "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
 
-// Must come from mongodb
-const MARKERS = [
-  {
+const SpotsMap = () => {
+  const [spots, setSpots] = useState([  {
     id: 1,
-    coords: [39.46748, -0.3772],
+    spotId: 1,
+    coords: {alt: 39.46748, lat: -0.3772},
     name: 'MUVIM',
     desc: 'The most iconic skate plaza in Valencia, always with some skaters arround.',
     type: 0,
     stars: 5,
     police: 2,
+    images: ["default.jpg"],
     comments: [
       {
         user_id: 0,
         comment: "The best place! #FreeMuvim"
       }
     ]
-  },
-  {
-    id: 2,
-    coords: [39.45748, -0.3672],
-    name: 'PLAZA',
-    type: 0,
-    desc: 'Testttttt'
+  }])
 
-  },
-  {
-    id: 3,
-    coords: [39.46748, -0.3672],
-    name: 'VALENCIA2',
-    type: 0,
-    desc: 'Testttttt'
 
-  }
-]
+  useEffect(() => {
+    fetch(import.meta.env.VITE_API_URL + "api/spots/getSpots", {
+      method: "POST",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }})
+    .then(res => res.json())
+    .then(data => {
+      setSpots(data)
+    })
+  },[])
 
-const SpotsMap = () => {
   return (
     <MapContainer center={POSITION} zoom={13} scrollWheelZoom={false}>
       <TileLayer attribution= {ATTRIBUTION} url={TILELAYER_URL}/>
-      {MARKERS.map((marker, index) => (
-        <Marker key={index} position={latLng(marker.coords[0], marker.coords[1])} icon={CUSTOM_ICONS[marker.type]}>
+      {spots.map((marker, index) => (
+        <Marker key={index} position={latLng(marker.coords.lat, marker.coords.alt)} icon={CUSTOM_ICONS[marker.type]}>
           <Popup>
             <h3>{marker.name}</h3>
-            <img src={S3_URL + marker.id + "/1"} alt="Spot Image"/>
+            <img src={import.meta.env.VITE_S3 + marker.images[0]} alt="Spot Image"/>
             <p>{marker.desc}</p>
-            <Button color='orange' size='l' style='fill'>MORE INFO</Button>
+            <Button link={"spot/" + marker.spotId} color='orange' size='l' style='fill'>MORE INFO</Button>
           </Popup>
         </Marker>
       ))}

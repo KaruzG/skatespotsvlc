@@ -38,7 +38,6 @@ const AddSpotForm = () => {
           await uploadSpotImg(data.spotId, data._id, values.files[i])
           reset()
         }
-
       })
 
   }
@@ -55,8 +54,8 @@ const AddSpotForm = () => {
 
           <label htmlFor="">Coords</label>
           <div className='coords'>
-            <input type="number" step={0.000001} required placeholder="Altitude" {...register("coords.alt")} />
-            <input type="number" step={0.000001} required placeholder="Latitude" {...register("coords.lat")}/>
+            <input type="number" step={0.00000000000000001} required placeholder="Latitude" {...register("coords.lat")} />
+            <input type="number" step={0.00000000000000001} required placeholder="Altitude" {...register("coords.alt")}/>
           </div>
 
           <label htmlFor="">Rating (1-5)</label>
@@ -67,9 +66,9 @@ const AddSpotForm = () => {
 
           <label htmlFor="">Type of spot</label>
           <select {...register("type")}>
-            <option value="1">Street spot</option>
-            <option value="2">Skatepark</option>
-            <option value="3">Shop</option>
+            <option value="0">Street spot</option>
+            <option value="1">Skatepark</option>
+            <option value="2">Shop</option>
           </select>
 
           <label htmlFor="">Image of the spot</label>

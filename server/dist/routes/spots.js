@@ -43,8 +43,9 @@ const checkUserToken_1 = __importDefault(require("../middlewares/checkUserToken"
 const router = express_1.default.Router();
 const storage = (0, multer_1.memoryStorage)();
 const upload = (0, multer_1.default)({ storage });
-router.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+router.post("/getSpots", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { body } = req;
+    console.log(body);
     const { spotId } = body;
     let params = {};
     if (spotId) {
@@ -83,6 +84,7 @@ router.post("/image", upload.single("file"), checkUserToken_1.default, (req, res
     const SPOT = yield Spot_1.default.findById(_id);
     SPOT.images.push(key);
     yield Spot_1.default.findOneAndUpdate({ _id: _id }, { images: SPOT.images }, { new: true });
+    console.log("Image uploaded to spot with id [" + spotId + "]: " + key);
     return res.status(201).json({ key });
 }));
 exports.default = router;

@@ -10,6 +10,13 @@ Header {
     justify-content: center;
     padding: 16px;
 
+    @media (width < 550px) {
+        padding: 10px;
+        h1 {
+            font-size: 25px;
+        }
+    }
+
     hr {
         margin: 1em 0;
     }
@@ -42,7 +49,11 @@ Header {
     list-style: none;
     z-index: 500; // Bcs leaflet map using 400 indexes...
     padding: 1em 0 2em 0;
-    border-bottom-left-radius: 20px;
+    border-bottom-left-radius: 15px;
+
+    @media (width < 550px) {
+        top: 49px;
+    }
 
     a {
         color: var(--white);
