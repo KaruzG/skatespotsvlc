@@ -1,27 +1,53 @@
 main.SpotPageMain {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
     padding: 2em;
-    align-items: center;
-    justify-content: center;
-    max-width: 1300px;
-    margin: 0 auto 7em auto;
-    gap: 5em;
+    align-items: start;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 1em auto 7em auto;
+    gap: 1em;
 
-    div:nth-child(1) {
+    @media (width < 550px) {
+        grid-template-columns: 1fr;
+        max-width: none;
+        width: 95vw;
+        align-items: center;
+        gap: 1.5em;
+        padding: 0.8em;
+
+        .main-img {
+            display: flex;
+            order: 1;
+            justify-content: center;
+            margin: 0;
+            width: 100%;
+
+            img {
+                width: 100% !important;
+            }
+        }
+
+        .text-info {
+            width: 100% !important;
+            order: 2;
+        }
+        
+    }
+
+    .text-info {
         display: flex;
         flex-direction: column;
         max-width: 400px;
-        width: 100%;
         h3 {
             color: rgba(255, 255, 255, 0.315);
             margin-bottom: 0.7em;
         }
     }
 
-    div:nth-child(2) {
+    .main-img {
         img {
-            max-width: 400px;
+            border-radius: 20px;
         }
     }
 }

@@ -1,11 +1,11 @@
 import axios from "axios"
 
-const validFormats = ["image/jpg", 'image/png', 'image/webp']
+const validFormats = ["image/jpg", "image/jpeg", 'image/png', 'image/webp']
 
 const uploadSpotImg = async (spotId, _id, image) => {
     const URL = import.meta.env.VITE_API_URL + "api/spots/image"
-    console.log(_id)
     if (!validFormats.find(type => type === image.type)) {
+      console.log("error")
       return {error: "Wrong file format"}
     }
 

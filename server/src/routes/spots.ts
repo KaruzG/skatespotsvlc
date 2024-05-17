@@ -8,8 +8,9 @@ const router = express.Router()
 const storage = memoryStorage()
 const upload = multer({storage})
 
-router.get("/", async (req, res) => {
+router.post("/getSpots", async (req, res) => {
     const { body } = req
+    console.log(body)
     const { spotId } = body
     let params = {}
 
@@ -54,6 +55,8 @@ router.post("/image",  upload.single("file"), checkUserToken, async (req, res) =
     SPOT.images.push(key)
 
     await Spot.findOneAndUpdate({_id: _id}, {images: SPOT.images}, {new: true})
+
+    console.log("Image uploaded to spot with id ["+spotId+"]: "+key)
     return res.status(201).json( {key} )
 })
 
