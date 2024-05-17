@@ -59,7 +59,7 @@ section#section1 {
     #downArrow {
         position: absolute;
         width: 90px;
-        bottom: 30px;
+        bottom: 0px;
         left: 0;
         right: 0;
         margin-left: auto;
@@ -81,7 +81,7 @@ section#section1 {
         }
 
         div:nth-child(2) {
-            padding-top: 50px;
+            padding-bottom: 50px;
         }
     }
 

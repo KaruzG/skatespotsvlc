@@ -14,6 +14,10 @@ section#section2 {
     a { /* The Button */
         position: absolute;
         bottom: 100px;
+
+        @media (height < 700px) {
+            display: none;
+        }
     }
 
     #about-proyect {
