@@ -7,6 +7,15 @@ section#section2 {
     position: relative;
     padding: 0 0.5em;
 
+    @media (width < 500px) {
+        justify-content: start;
+        padding-top: 80px;
+
+        button {
+            display: none;
+        }
+    }
+
     h1 {
         margin-bottom: 30px;
         text-align: center;
@@ -15,10 +24,6 @@ section#section2 {
     a { /* The Button */
         position: absolute;
         bottom: 100px;
-
-        @media (width < 500px) {
-            display: none;
-        }
     }
 
     #about-proyect {
@@ -32,7 +37,7 @@ section#section2 {
             width: 40px;
         }
 
-        @media (height < 560px) {
+        @media (max-device-height < 560px) {
             display: none;
         }
     }
