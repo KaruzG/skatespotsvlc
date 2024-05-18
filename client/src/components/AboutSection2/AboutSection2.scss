@@ -5,6 +5,7 @@ section#section2 {
     justify-content: center;
     padding-bottom: 5em;
     position: relative;
+    padding: 0 0.5em;
 
     h1 {
         margin-bottom: 30px;
@@ -15,7 +16,7 @@ section#section2 {
         position: absolute;
         bottom: 100px;
 
-        @media (height < 700px) {
+        @media (width < 500px) {
             display: none;
         }
     }
@@ -29,6 +30,10 @@ section#section2 {
         color: rgba(255, 255, 255, 0.267);
         svg {
             width: 40px;
+        }
+
+        @media (height < 560px) {
+            display: none;
         }
     }
 }

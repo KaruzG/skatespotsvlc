@@ -3,6 +3,7 @@
 section#section1 {
     display: flex;
     position: relative;
+    height: 90dvh !important;
     flex-direction: row;
     gap: 200px;
     padding: 0 3em;
