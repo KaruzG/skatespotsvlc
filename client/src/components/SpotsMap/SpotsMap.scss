@@ -34,6 +34,9 @@
         text-align: left;
         font-size: medium;
         margin: 0 !important;
+        text-overflow: ellipsis !important;
+        max-width: 100%;
+        overflow: hidden;
     }
 
     button {
