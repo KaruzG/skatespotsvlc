@@ -47,8 +47,11 @@ div.spotsParksShop {
 
         div {
             img {
-                height: 150px;
+                height: 110px;
                 filter: saturate(0.8) brightness(0.6);
+            }
+            h2 {
+                bottom: 15px;
             }
         }
 
@@ -56,7 +59,7 @@ div.spotsParksShop {
             margin: 0;
 
             h2 {
-                bottom: 30px;
+                bottom: 15px;
             }
         }
     }

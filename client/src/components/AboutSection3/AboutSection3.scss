@@ -5,6 +5,10 @@ section#section3 {
     justify-content: center;
     position: relative;
 
+    @media (width < 600px) {
+        padding: 1em;
+    }
+
     #wrapper {
         display: flex;
         flex-direction: column;

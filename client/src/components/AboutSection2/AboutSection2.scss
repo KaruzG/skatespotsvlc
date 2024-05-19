@@ -5,6 +5,16 @@ section#section2 {
     justify-content: center;
     padding-bottom: 5em;
     position: relative;
+    padding: 0 0.5em;
+
+    @media (width < 500px) {
+        justify-content: start;
+        padding-top: 80px;
+
+        button {
+            display: none;
+        }
+    }
 
     h1 {
         margin-bottom: 30px;
@@ -25,6 +35,10 @@ section#section2 {
         color: rgba(255, 255, 255, 0.267);
         svg {
             width: 40px;
+        }
+
+        @media (max-device-height < 560px) {
+            display: none;
         }
     }
 }

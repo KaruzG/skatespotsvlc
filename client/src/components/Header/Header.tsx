@@ -32,7 +32,7 @@ function Header() {
     return (
         <>
             <header>
-                <Link to="/"><h1>SKATESPOTSVLC</h1></Link>
+                <Link to="/"><h1 translate='no'>SKATESPOTSVLC</h1></Link>
                 <div onClick={handleClick}>
                     <BurgerButton />
                 </div>
