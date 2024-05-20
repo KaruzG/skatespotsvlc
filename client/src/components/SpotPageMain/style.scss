@@ -39,10 +39,26 @@ main.SpotPageMain {
         display: flex;
         flex-direction: column;
         max-width: 400px;
+        h2 {
+            font-size: 2.5em;
+        }
+
         h3 {
             color: rgba(255, 255, 255, 0.315);
             margin-bottom: 0.7em;
+
+            span {
+                font-size: 0.8em;
+                font-weight: 500;
+            }
         }
+    }
+
+    p {
+        font-size: 1.1em;
+        margin-bottom: 0.5em;
+        max-width: 700px;
+        text-wrap: pretty;
     }
 
     .main-img {
