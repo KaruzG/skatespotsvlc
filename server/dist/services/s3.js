@@ -30,7 +30,6 @@ const uploadToS3 = (_a) => __awaiter(void 0, [_a], void 0, function* ({ file, sp
         return { key };
     }
     catch (error) {
-        console.log("fuck");
         console.log(error);
         return { error };
     }
