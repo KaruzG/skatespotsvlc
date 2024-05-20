@@ -23,7 +23,6 @@ export const uploadToS3 = async ({file, spotId}:uploadData) => {
         await s3.send(command)
         return { key } 
     } catch (error) {
-        console.log("fuck")
         console.log(error)
         return { error } 
     }

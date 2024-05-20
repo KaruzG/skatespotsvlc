@@ -1,7 +1,7 @@
 import Stars from 'react-awesome-stars-rating';
 import PoliceRisk from "../PoliceRisk";
 import "./style.scss"
-import {SpotContext} from "../../context/spotContext"
+import { SpotContext } from "../../context/SpotContext"
 import { useContext } from 'react';
 
 const SpotPageMain = () => {

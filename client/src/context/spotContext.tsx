@@ -2,6 +2,7 @@ import { createContext } from "react";
 import { SpotData } from "../types/spotData";
 
 export const SpotContext = createContext<SpotData>({
+    "spotId": 0,
     "name": "Loading data",
     "desc": "",
     "coords": {"alt": 1, "lat": 2},

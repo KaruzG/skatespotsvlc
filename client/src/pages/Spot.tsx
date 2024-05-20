@@ -5,10 +5,11 @@ import SpotPageMain from '../components/SpotPageMain'
 import "../css/index.scss"
 import "../css/spot.scss"
 import { useEffect, useState } from 'react'
-import {SpotContext} from  "../context/spotContext"
+import {SpotContext} from  "../context/SpotContext"
 import { SpotData } from '../types/spotData'
 
 const SAMPLE_SPOT_DATA = {
+    "spotId": 1,
     "name": "Loading data",
     "desc": "",
     "coords": {"alt": 1, "lat": 2},
