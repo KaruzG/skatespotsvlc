@@ -25,7 +25,7 @@ const SKATEPARK_ICON = new Icon({
 
 const SHOP_ICON = new Icon({
     iconUrl: shopMarker,
-    iconSize: [45, 45]
+    iconSize: [30, 30]
 })
 
 const EVENT_ICON = new Icon({

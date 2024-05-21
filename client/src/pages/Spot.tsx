@@ -7,6 +7,7 @@ import "../css/spot.scss"
 import { useEffect, useState } from 'react'
 import {SpotContext} from  "../context/SpotContext"
 import { SpotData } from '../types/SpotData'
+import SpotImages from '../components/SpotImages'
 
 const SAMPLE_SPOT_DATA = {
     "spotId": 1,
@@ -44,7 +45,8 @@ function Spot() {
             <div id='spot-wrapper'>
                 <Header />
                 <SpotContext.Provider value={spotData}>
-                   <SpotPageMain/>                
+                   <SpotPageMain/>
+                   <SpotImages/>    
                 </SpotContext.Provider>
                 <Footer></Footer>
             </div>

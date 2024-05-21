@@ -1,0 +1,25 @@
+
+#SpotImages {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--black-bg-3);
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    padding: 2em 0 5em;
+    overflow: hidden;
+    
+    #SpotImages-imgs {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5em;
+        img {
+            object-fit: cover;
+            width: 90%;
+            max-width: 400px;
+            max-height: 400px;
+        }
+    }
+}
