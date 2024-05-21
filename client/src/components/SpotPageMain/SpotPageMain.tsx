@@ -3,10 +3,11 @@ import PoliceRisk from "../PoliceRisk";
 import "./style.scss"
 import { SpotContext } from "../../context/SpotContext"
 import { useContext } from 'react';
+import { SpotData } from '../../types/spotData';
 
 const SpotPageMain = () => {
 
-  const spotData = useContext(SpotContext)
+  const spotData = useContext<SpotData>(SpotContext)
 
   return (
     <>
