@@ -41,8 +41,8 @@ const AddSpotForm = () => {
       .then(async (data) => {
         for (let i = 0; i < values.files.length; i++) { // Would be better to send all at once and iterate in backend
           await uploadSpotImg(data.spotId, data._id, values.files[i])
-          reset()
         }
+        reset()
       })
 
   }
