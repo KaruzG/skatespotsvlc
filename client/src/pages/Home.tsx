@@ -5,7 +5,7 @@ import SpotsMap from '../components/SpotsMap'
 import '../css/index.scss'
 import { AllSpotsContext } from '../context/AllSpotsContext'
 import { useEffect, useState } from 'react'
-import { SpotData } from '../types/spotData'
+import { SpotData } from '../types/SpotData'
 
 
 function Home() {

@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { SpotData } from "../types/spotData";
+import { SpotData } from "../types/SpotData";
 
 export const AllSpotsContext = createContext<SpotData[]>([
     {

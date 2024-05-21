@@ -6,7 +6,7 @@ import "../css/index.scss"
 import "../css/spot.scss"
 import { useEffect, useState } from 'react'
 import {SpotContext} from  "../context/SpotContext"
-import { SpotData } from '../types/spotData'
+import { SpotData } from '../types/SpotData'
 
 const SAMPLE_SPOT_DATA = {
     "spotId": 1,
