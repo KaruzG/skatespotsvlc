@@ -1,4 +1,8 @@
 import { Icon } from 'leaflet';
+import pinMarker from '../../svg/pinMarker.svg'
+import parkMarker from "../../svg/parkMarker.svg"
+import shopMarker from "../../svg/shopMarker.svg"
+import eventMarker from "../../svg/eventMarker.svg"
 
 /* Array of icons for the map
 
@@ -10,22 +14,22 @@ import { Icon } from 'leaflet';
 */
 
 const DEFAULT_ICON = new Icon({
-    iconUrl: "https://godirectplumbing.com/wp-content/uploads/2024/03/GPS-Icon.png",
-    iconSize: [45, 45]
+    iconUrl: pinMarker,
+    iconSize: [45, 45],
 })
 
 const SKATEPARK_ICON = new Icon({
-    iconUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq7jSUGXySWOQ9o2QL7-PPE_Cfb9vPBZp0uj-vMwzOvw&s",
+    iconUrl: parkMarker,
     iconSize: [45, 45]
 })
 
 const SHOP_ICON = new Icon({
-    iconUrl: "https://godirectplumbing.com/wp-content/uploads/2024/03/GPS-Icon.png",
+    iconUrl: shopMarker,
     iconSize: [45, 45]
 })
 
 const EVENT_ICON = new Icon({
-    iconUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq7jSUGXySWOQ9o2QL7-PPE_Cfb9vPBZp0uj-vMwzOvw&s",
+    iconUrl: eventMarker,
     iconSize: [45, 45]
 })
 

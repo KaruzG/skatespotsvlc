@@ -1,7 +1,7 @@
 .spotBubble {
     background-color: var(--black);
     border-radius: var(--BRBubble);
-    min-width: 180px;
+    width: 200px;
     height: 180px;
     display: flex;
     flex-direction: column;
@@ -29,10 +29,16 @@
     }
 
     div h3 {
-        width: 100%;
         text-align: center;
         text-transform: uppercase;
         margin: 0;
+        max-width: 180px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* number of lines to show */
+                line-clamp: 2;
+        -webkit-box-orient: vertical;
     }
 
 

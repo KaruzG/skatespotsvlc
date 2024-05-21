@@ -8,6 +8,7 @@ import logout from '../../utils/logout';
 
 function Header() {
     const [dropdownDisplay , setDropdownDisplay] = useState("none");
+    
     const navigate = useNavigate()
     
     let username
@@ -25,6 +26,19 @@ function Header() {
         }
     }
 
+    const UserBubble = () => {
+        return (
+        <>
+            <li className='UserBubble'>
+                <img title='User' src="https://static.vecteezy.com/system/resources/thumbnails/005/129/844/small_2x/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg" alt="profilePic" />
+                <span>{username}</span>
+                <BiLogOut onClick={handleLogout}/>
+            </li>
+        </>
+        )
+    } 
+
+
     function handleLogout() {
         if(logout()) { navigate("/") }
     }
@@ -33,15 +47,22 @@ function Header() {
         <>
             <header>
                 <Link to="/"><h1 translate='no'>SKATESPOTSVLC</h1></Link>
-                <div onClick={handleClick}>
+                <div id='burgerButton' onClick={handleClick}>
                     <BurgerButton />
                 </div>
+                <nav id='navDesktop'>
+                    <ul>
+                        <Link to="/"><li><FaRegMap/></li></Link>
+                        <Link to="/"><li><BiBook/></li></Link>
+                        <Link to="/About"><li><BiInfoCircle/></li></Link>
+                    </ul>
+                    <div onClick={handleClick}>
+                        <UserBubble/>
+                    </div>
+                </nav>
+
                 <ul id='header-dropdown'  style={{display: dropdownDisplay}}>
-                    <li id="user">
-                        <img src="https://static.vecteezy.com/system/resources/thumbnails/005/129/844/small_2x/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg" alt="profilePic" />
-                        <span>{username}</span>
-                        <BiLogOut onClick={handleLogout}/>
-                    </li>
+                    <UserBubble/>
                     <hr />
                     <Link to="/"><li><FaRegMap />HOME</li></Link>
                     <Link to="/spots"><li><BiBook />SPOTS</li></Link>

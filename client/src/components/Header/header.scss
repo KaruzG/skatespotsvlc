@@ -17,6 +17,61 @@ Header {
         }
     }
 
+    #navDesktop { display: none; }
+
+    @media (width > 700px) { // Desktop nav
+        #burgerButton {
+            display: none;
+        }
+
+        #navDesktop {
+                display: flex;
+                gap: 0.5em;
+                position: absolute;
+                right: 16px;
+                
+                ul {
+                    gap: 0.5em;
+                    display: flex;
+                    flex-direction: row;
+                    li {
+                        list-style-type: none;
+                        border: 2px solid rgb(77, 77, 77);
+                        border-radius: 5px;
+                        padding: 3px;
+        
+                        &:hover {
+                            background-color: rgba(255, 255, 255, 0.068);
+                            cursor: pointer;
+                        }
+        
+                        svg {
+                            width: 25px;
+                            color: rgb(211, 211, 211);
+                        }
+                    }
+                }
+    
+                .UserBubble {
+                    gap: 5px;
+                    padding: 0;
+                        img {
+                            border: 2px solid rgb(77, 77, 77);
+                            width: 35px;
+                            cursor: pointer;
+                        }
+
+                        span {
+                            display: none;
+                        }
+
+                        svg {
+                            display: none;
+                        }
+                }
+        }
+    }
+
     hr {
         margin: 1em 0;
     }
@@ -31,7 +86,7 @@ Header {
         letter-spacing: 2px;
     }
 
-    div {
+    #burgerButton {
         position: absolute;
         right: 16px;
     }
@@ -53,6 +108,10 @@ Header {
 
     @media (width < 550px) {
         top: 49px;
+    }
+
+    @media (width > 700px) {
+        display: none;
     }
 
     a {
@@ -78,8 +137,9 @@ Header {
             background: rgba(255, 255, 255, 0.021);
         }
     }
-
-    li#user {
+    
+}
+    li.UserBubble {
         display: flex;
         align-items: center;
         gap: 25px;
@@ -98,4 +158,3 @@ Header {
             }
         }
     }
-}
