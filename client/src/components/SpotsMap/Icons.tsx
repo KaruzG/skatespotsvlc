@@ -20,7 +20,7 @@ const DEFAULT_ICON = new Icon({
 
 const SKATEPARK_ICON = new Icon({
     iconUrl: parkMarker,
-    iconSize: [45, 45]
+    iconSize: [30, 30]
 })
 
 const SHOP_ICON = new Icon({
