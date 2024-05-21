@@ -21,8 +21,8 @@ const AddSpotForm = () => {
   
   const onSubmit: SubmitHandler<AddSpotFormData> = async (values) => {
     // Round coords
-    parseFloat((values.coords.alt).toFixed(5))
-    parseFloat((values.coords.lat).toFixed(5))
+/*     values.coords.alt = parseFloat((values.coords.alt).toFixed(5)) */
+/*     values.coords.alt = parseFloat((values.coords.lat).toFixed(5)) */
 
     
     const URL = import.meta.env.VITE_API_URL + "api/spots/"
