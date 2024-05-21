@@ -1,27 +1,28 @@
 import Stars from 'react-awesome-stars-rating';
 import PoliceRisk from "../PoliceRisk";
 import "./style.scss"
-import {SpotContext} from "../../context/spotContext"
+import { SpotContext } from "../../context/SpotContext"
 import { useContext } from 'react';
+import { SpotData } from '../../types/SpotData';
 
 const SpotPageMain = () => {
 
-  const spotData = useContext(SpotContext)
+  const spotValues = useContext<SpotData>(SpotContext)
 
   return (
     <>
       <main className="SpotPageMain">
         <div className="text-info">
             <div>
-              <Stars value={spotData.stars} isEdit={false} starGap={2}/>
-              <h2>{spotData.name}</h2>
+              <Stars value={spotValues.stars} isEdit={false} starGap={2}/>
+              <h2>{spotValues.name}</h2>
             </div>
-            <h3>Coords: <span>{spotData.coords.alt +", " +spotData.coords.lat}</span></h3>
-            <p>{spotData.desc}</p>
-            <PoliceRisk risk={spotData.police} />
+            <h3>Coords: <span>{spotValues.coords.alt +", " +spotValues.coords.lat}</span></h3>
+            <p>{spotValues.desc}</p>
+            <PoliceRisk risk={spotValues.police} />
         </div>
         <div className="main-img">
-            <img src={import.meta.env.VITE_S3 + spotData.images[0]} alt="" />
+            <img src={import.meta.env.VITE_S3 + spotValues.images[0]} alt="" />
         </div>
       </main>
     </>

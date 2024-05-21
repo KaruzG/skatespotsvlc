@@ -1,8 +1,10 @@
 import "./SpotBubble.scss"
+import { Link } from "react-router-dom";
 
 type PropsSpotBubble = {
     spotName:string;
     srcImg:string;
+    spotId: number;
 }
 
 function addDefaultImg(ev) {
@@ -12,12 +14,14 @@ function addDefaultImg(ev) {
 const SpotBubble = (props:PropsSpotBubble) => {
   return (
     <>
-      <div className="spotBubble">
-        <img onError={addDefaultImg} src={props.srcImg} alt={props.spotName} />
-        <div>
-          <h3>{props.spotName}</h3>
+      <Link to={"/spot/" + props.spotId}>
+        <div className="spotBubble">
+          <img onError={addDefaultImg} src={props.srcImg} alt={props.spotName} />
+          <div>
+            <h3>{props.spotName}</h3>
+          </div>
         </div>
-      </div>
+      </Link>
     </>
   )
 };
