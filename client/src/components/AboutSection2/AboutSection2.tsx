@@ -8,10 +8,12 @@ const AboutSection2 = () => {
   return (
    <section id="section2">
     <h1>What are you looking for?</h1>
-    
+
     <SpotsParksShops/>
     
-    <Button color="orange" size="l" style="fill" link={"/"}>MAP</Button>
+    <div className="section2-button">
+      <Button color="orange" size="l" style="fill" link={"/spots/0"}>MAP</Button>
+    </div>
     
     <div id="about-proyect">
       <h4>About the proyect</h4>
