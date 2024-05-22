@@ -51,6 +51,21 @@ main.SpotPageMain {
                 font-size: 0.8em;
                 font-weight: 500;
             }
+
+            a {
+                margin-right: 10px;
+                text-decoration: none;
+                color: var(--white);
+                svg {
+                    border: 2px solid gray;
+                    border-radius: 7px;
+                    padding: 2px;
+                    width: 35px;
+                }
+                &:hover {
+                    filter: brightness(1.2);
+                }
+            }
         }
     }
 
