@@ -53,7 +53,7 @@ function Header() {
                 <nav id='navDesktop'>
                     <ul>
                         <Link to="/"><li><FaRegMap/></li></Link>
-                        <Link to="/"><li><BiBook/></li></Link>
+                        <Link to="/Spots"><li><BiBook/></li></Link>
                         <Link to="/About"><li><BiInfoCircle/></li></Link>
                     </ul>
                     <div onClick={handleClick}>

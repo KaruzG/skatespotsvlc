@@ -49,7 +49,7 @@ const BestSpotsSection = () => {
                     })}
                 </div>
                 <div className="bestSpotSection-shadow bestSpotSection-shadow-right"></div>
-                <Button color="white" style="empty" size="l">MORE SPOTS</Button>
+                <Button link={"/spots"} color="white" style="empty" size="l">MORE SPOTS</Button>
             </section>  
         </>
     )
