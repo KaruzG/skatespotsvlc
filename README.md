@@ -14,10 +14,8 @@ SKATESPOTSVLC is a web application designed for the skateboarding community in V
 ## Features 🚀
 
 - Interactive map of the city with spots and skateparks marked.
-- Individual pages for each spot/skatepark with details and community comments.
-- Automatic alerts system for environmental conditions.
+- Individual pages for each spot/skatepark with details.
 - Integration with skate shops and brands for the promotion of events and competitions.
-- Voting system for spots and alerts.
 - Admin panel for adding spots and users
 
 ## Technologies Used 💻
@@ -31,25 +29,21 @@ SKATESPOTSVLC is a web application designed for the skateboarding community in V
 - Vercel for the hosting
 
 Libraries:
+- [react-router-dom](https://reactrouter.com/en/main)
 - [leaflet](https://leafletjs.com/) _Thanks openStreetMaps_
 - [react-leaflet](https://react-leaflet.js.org/)
+- [axios](https://www.npmjs.com/package/axios)
+- [react-awesome-stars-rating](https://www.npmjs.com/package/react-awesome-stars-rating)
+- [react-icons](https://react-icons.github.io/react-icons/)
 
-## Installation 🛠️
-
-1. Clone this repository to your local machine.
-2. Install dependencies with the command `npm install`
-3. Configure the .env needed keys
-4. Build & Run
+## Images! 💯
+![image](https://github.com/KaruzG/skatespotsvlc/assets/95084763/c3a1b9a7-c711-4fae-9395-322a0e6777c8)
+![image](https://github.com/KaruzG/skatespotsvlc/assets/95084763/f4f57dd0-6472-4183-8218-6f7a8fdcccef)
+![image](https://github.com/KaruzG/skatespotsvlc/assets/95084763/1f2e0246-a909-488d-9dd2-6c553b9af6c4)
+![image](https://github.com/KaruzG/skatespotsvlc/assets/95084763/553dd543-57d7-48f8-b37e-15627af14a23)
+![image](https://github.com/KaruzG/skatespotsvlc/assets/95084763/b8ecc7ff-66a0-474b-92a2-15aea8fb530f)
 
 ## License 📄
 
 This project is licensed under the [MIT License](LICENSE).
-
-## Images! 💯
-
-![image](https://github.com/KaruzG/skatespotsvlc/assets/95084763/54ad792b-1225-4201-b524-e06fa03637b2)
-
-![image](https://github.com/KaruzG/skatespotsvlc/assets/95084763/ca2d392d-07d2-4ec4-a75e-afc7731852b1)
-
-![image](https://github.com/KaruzG/skatespotsvlc/assets/95084763/d8ce571b-06be-44ed-90bb-9b9e2b422a21)
 
