@@ -4,10 +4,12 @@ import Header from "../components/Header";
 import "../css/spots.scss"
 import { AllSpotsContext } from "../context/AllSpotsContext";
 import SpotBubbleFeed from "../components/SpotBubbleFeed";
+import { ScrollRestoration, useParams } from "react-router-dom";
 
 export function Spots() {
+  const { query } = useParams()
   const spots = useContext(AllSpotsContext)
-  const [activeMenu, setActiveMenu] = useState(0)
+  const [activeMenu, setActiveMenu] = useState(Number(query))
   /* const [shownSpots, setShownSpots] = useState(0) */
 
   const navMenus = [
@@ -52,6 +54,7 @@ export function Spots() {
                 </main>
             </div>
             <Footer />
+            <ScrollRestoration/>
       </>
     )
 }

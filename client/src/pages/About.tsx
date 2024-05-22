@@ -4,6 +4,7 @@ import Header from "../components/Header"
 import '../css/index.scss'
 import  '../css/about.scss'
 import AboutSection3 from "../components/AboutSection3"
+import { ScrollRestoration } from "react-router-dom"
 
 
 
@@ -17,6 +18,7 @@ function About() {
                 <AboutSection2/>
                 <AboutSection3/>
             </main>
+            <ScrollRestoration/>
         </div>
     )
 }

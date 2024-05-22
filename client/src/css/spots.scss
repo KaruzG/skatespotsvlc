@@ -2,11 +2,12 @@ div#spots-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 70vh;
 
     nav {
         display: flex;
         flex-direction: row;
-        gap: 15px;
+        gap: 3px;
         margin: 2em;
     
         button {
@@ -34,8 +35,23 @@ div#spots-wrapper {
         width: 100%;
         align-items: center;
         gap: 2em;
+        max-width: 1700px;
+        padding: 1em;
+
+        @media (width > 500px) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            a {
+                max-width: 300px;
+            }
+            .spotBubbleFeed {
+                max-width: 300px;
+            }
+        }
 
         a {
+            width: 100%;
             text-decoration: none;
         }
     }

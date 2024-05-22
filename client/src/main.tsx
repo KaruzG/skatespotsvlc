@@ -18,7 +18,7 @@ const router = createBrowserRouter([
   { path: "/About", element: <About />},
   { path: "/Admin", element: <Admin />},
   { path: "/Login", element: <Login />},
-  { path: "/Spots", element: <Spots />},
+  { path: "/Spots/:query", element: <Spots />},
 ])
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -26,5 +26,5 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <SpotsProvider>
       <RouterProvider router={router} />
     </SpotsProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 )

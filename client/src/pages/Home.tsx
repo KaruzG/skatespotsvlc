@@ -5,6 +5,7 @@ import SpotsMap from '../components/SpotsMap'
 import '../css/index.scss'
 import SpotsParksShop from '../components/spotsParksShop'
 import Button from '../components/Button'
+import { ScrollRestoration } from 'react-router-dom'
 
 
 function Home() {
@@ -16,9 +17,10 @@ function Home() {
             <section id='section-SpotsParksShop'>
               <h3>LOOKING FOR?</h3>
               <SpotsParksShop />
-              <Button link={"/spots"} color="white" style="empty" size="l">MORE SPOTS</Button>
+              <Button link={"/spots/0"} color="white" style="empty" size="l">MORE SPOTS</Button>
             </section>
             <Footer />
+            <ScrollRestoration/>
         </div>
     )
 }
