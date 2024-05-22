@@ -32,7 +32,7 @@ const BestSpotsSection = () => {
           }
         };
     
-        const scrollInterval = setInterval(scrollRight, 16); // Aproximadamente 60 fps
+        const scrollInterval = setInterval(scrollRight, 16);
     
         // Limpiar el intervalo al desmontar el componente
         return () => clearInterval(scrollInterval);
@@ -49,7 +49,7 @@ const BestSpotsSection = () => {
                     })}
                 </div>
                 <div className="bestSpotSection-shadow bestSpotSection-shadow-right"></div>
-                <Button color="white" style="empty" size="l">MORE SPOTS</Button>
+                <Button link={"/spots/0"} color="white" style="empty" size="l">MORE SPOTS</Button>
             </section>  
         </>
     )

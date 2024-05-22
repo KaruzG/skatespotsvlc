@@ -1,0 +1,58 @@
+div#spots-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 70vh;
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        gap: 3px;
+        margin: 2em;
+    
+        button {
+            background: none;
+            color: var(--white);
+            border-radius: 0;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.178);
+            padding: 0.5em 1em;
+            
+            &.active {
+                color: var(--orange);
+                border-bottom: 2px solid var(--orange);
+            }
+    
+            &:hover {
+                color: var(--orange);
+                border-bottom: 2px solid var(--orange);
+            }
+        }
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        gap: 2em;
+        max-width: 1700px;
+        padding: 1em;
+
+        @media (width > 500px) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            a {
+                max-width: 300px;
+            }
+            .spotBubbleFeed {
+                max-width: 300px;
+            }
+        }
+
+        a {
+            width: 100%;
+            text-decoration: none;
+        }
+    }
+}

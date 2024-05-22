@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { ScrollRestoration, useParams } from 'react-router-dom'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import SpotPageMain from '../components/SpotPageMain'
@@ -49,6 +49,7 @@ function Spot() {
                    <SpotImages/>    
                 </SpotContext.Provider>
                 <Footer></Footer>
+                <ScrollRestoration/>
             </div>
     )
 }
