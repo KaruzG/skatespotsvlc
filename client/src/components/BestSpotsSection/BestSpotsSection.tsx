@@ -45,6 +45,7 @@ const BestSpotsSection = () => {
                 <h3>BEST SPOTS</h3>
                 <div className="spots" ref={scrollContainerRef}>
                     {spotsToShow.map((spot) => {
+                        if(spot.type === 2) { return } // Has to change (To remove skateshops)
                         return <SpotBubble spotName={spot.name} srcImg={import.meta.env.VITE_S3 + spot.images[0]} spotId={spot.spotId} />
                     })}
                 </div>
