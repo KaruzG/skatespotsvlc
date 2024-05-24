@@ -52,9 +52,9 @@ function Header() {
                 </div>
                 <nav id='navDesktop'>
                     <ul>
-                        <Link to="/"><li><FaRegMap/></li></Link>
-                        <Link to="/Spots"><li><BiBook/></li></Link>
-                        <Link to="/About"><li><BiInfoCircle/></li></Link>
+                        <Link to="/"><li title='Map'><FaRegMap/></li></Link>
+                        <Link to="/Spots/0"><li title='All Spots'><BiBook/></li></Link>
+                        <Link to="/About"><li title='About'><BiInfoCircle/></li></Link>
                     </ul>
                     <div onClick={handleClick}>
                         <UserBubble/>
@@ -65,7 +65,7 @@ function Header() {
                     <UserBubble/>
                     <hr />
                     <Link to="/"><li><FaRegMap />HOME</li></Link>
-                    <Link to="/spots"><li><BiBook />SPOTS</li></Link>
+                    <Link to="/spots/0"><li><BiBook />SPOTS</li></Link>
                     <Link to="/about"><li><BiInfoCircle />ABOUT</li></Link> 
                 </ul>
             </header>

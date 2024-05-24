@@ -24,7 +24,7 @@ const SpotsMap = () => {
             <h3>{marker.name}</h3>
             <img src={import.meta.env.VITE_S3 + marker.images[0]} alt="Spot Image"/>
             <p>{marker.desc}</p>
-            <Button link={"spot/" + marker.spotId} color='orange' size='l' style='fill'>MORE INFO</Button>
+            <Button link={"spot/0" + marker.spotId} color='orange' size='l' style='fill'>MORE INFO</Button>
           </Popup>
         </Marker>
       ))}

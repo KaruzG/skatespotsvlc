@@ -38,6 +38,7 @@ export function Spots() {
 
     return (
       <>
+            <ScrollRestoration/>
             <Header />
             <div id='spots-wrapper'>
                 <nav>
@@ -54,7 +55,6 @@ export function Spots() {
                 </main>
             </div>
             <Footer />
-            <ScrollRestoration/>
       </>
     )
 }
