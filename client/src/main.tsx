@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-
+import { Analytics } from '@vercel/analytics/react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import Home from './pages/Home'
@@ -23,6 +23,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
+    <Analytics />
     <SpotsProvider>
       <RouterProvider router={router} />
     </SpotsProvider>
